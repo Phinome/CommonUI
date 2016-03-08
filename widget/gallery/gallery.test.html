@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+    <title>gallery测试页面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    
+
+    <link rel="stylesheet" href="../../dist/boost.css">
+    <style type="text/css">
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+
+</head>
+
+<body>
+
+	<div id="gallery-wrapper"  class="blend-gallery" data-blend-gallery="">
+    </div>
+    <div id="gallery-wrapper1"  class="blend-gallery" data-blend-gallery="">
+    </div>
+    <input type="button"  id="show" class="show" value="click to show"/>
+    <button id="show1" class="show">房产样式</button>
+
+    <div>
+        让页面撑满！！！！<br>
+        让页面撑满！！！！<br>
+        让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>让页面撑满！！！！<br>
+        让页面撑满！！！！<br>
+
+    </div>
+
+
+<!--     <script src="../../js/zepto.js"></script>
+    <script src="../../js/event.js"></script>
+    <script src="../../js/touch.js"></script>
+    <script src="../../js/data.js"></script>
+    <script src="../../js/widget.js"></script> 
+    <script type="text/javascript" src="./gallery.js"></script> -->
+    <!-- // <script src="../../js/zepto.js"></script> -->
+
+    <script src="../../dist/boost.js"></script>
+    <script>
+        window.boost = $.noConflict(true);
+    </script>
+
+
+
+
+    <!-- // <script src="../../js/zepto.js"></script> -->
+    
+    <script>
+        
+        ;(function(){
+
+        var list = [{
+            // height: 414,
+            // width: 300,
+            image: "http://a.hiphotos.baidu.com/image/pic/item/4b90f603738da977a9aac626b251f8198618e332.jpg",
+            description:"这是第1张图片啊！！！！！",
+            title:"图片集"
+        },{
+            // height: 414,
+            // width: 300,
+            image: "http://b.hiphotos.baidu.com/image/pic/item/b8389b504fc2d5627c886ee4e51190ef76c66c33.jpg",
+            description:"这是第2张图片啊！！！！！",
+            title:"图片集"
+        },{
+            // height: 414,
+            // width: 300,
+            image: "http://c.hiphotos.baidu.com/image/pic/item/4034970a304e251f17a2e38ba486c9177f3e536f.jpg",
+            description:"这是第3张图片啊！！！！！",
+            title:"图片集"
+        },{
+            // height: 414,
+            // width: 300,
+            image: "http://t12.baidu.com/it/u=4224136820,222817142&fm=32&s=CE73A55661C252F05E652DCE010070E2&w=623&h=799&img.JPEG",
+            description:"这是第4张图片啊！！！！！",
+            title:"图片集"
+        },{
+            // height: 414,
+            // width: 300,
+            image: "http://d.hiphotos.baidu.com/image/pic/item/00e93901213fb80e80d7d65437d12f2eb938942b.jpg",
+            description:"这是第5张图片啊！！！！！",
+            title:"图片集"
+        },{
+            // height: 414,
+            // width: 300,
+            image: "http://h.hiphotos.baidu.com/image/pic/item/d439b6003af33a87069d591bc45c10385343b53b.jpg",
+            description:"超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！超长的描述！！！！",
+            title:"图片集"
+        }];
+
+        var list1 = [{
+            // height: 414,
+            // width: 300,
+            image: "http://a.hiphotos.baidu.com/image/pic/item/4b90f603738da977a9aac626b251f8198618e332.jpg",
+            description:"这是第1张图片啊！！！！！",
+            title:"图片集"
+        }]
+
+        var wrapper = boost("#gallery-wrapper").gallery({
+            data:list,
+            duration:2000,
+            isLooping:true,
+            useZoom:true, // 默认是true
+            // initIndex:5,
+            // isAutoplay:false //是否自动播放,暂不支持修改
+            // infoType:1
+        });
+        wrapper.on('gallery:close',function(){
+            console.log('gallery ---- close');
+        });
+
+
+
+        boost("#show").on("click",function(){
+            wrapper.gallery("show");
+            // wrapper.gallery("show",9);
+            
+        });
+	
+	setTimeout(function(){
+		// wrapper.gallery("show",5);
+	},3000);
+
+       /* var s = boost.blend.gallery({
+            data:list,
+            duration:2000,
+            isLooping:true,
+            useZoom:true,
+            isAutoplay:false //是否自动播放
+        });
+        console.log(s);
+
+        s.show();*/
+
+        var list1 = [{
+            // height: 414,
+            // width: 300,
+            image: "http://be-fe.github.io/iSlider/demo/picture/imgs/long/4.jpg",
+            description:"这是第4张图片啊！！！！！",
+            title:"图片集"
+        },{
+            // height: 414,
+            // width: 300,
+            image: "http://be-fe.github.io/iSlider/demo/picture/imgs/long/5.jpg",
+            description:"这是第5张图片啊！！！！！",
+            title:"图片集"
+        },{
+            // height: 414,
+            // width: 300,
+            image: "http://be-fe.github.io/iSlider/demo/picture/imgs/long/6.jpg",
+            description:"这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！这是第6张图片啊！！！！！",
+            title:"图片集"
+        }];
+
+
+        var wrapper1 = boost("#gallery-wrapper1").gallery({
+            data:list1,
+            // isDebug:true,
+            duration:2000,
+            isLooping:true,
+            infoType:1
+        });
+
+
+        boost("#show1").on("click",function(){
+            wrapper1.gallery("show");
+            
+        });
+
+        
+
+
+
+        /*var wrapper2 = boost(".show").gallery({
+            data:list1,
+            // isDebug:true,
+            duration:2000,
+            isLooping:true,
+            useZoom:true,
+            isAutoplay:false //是否自动播放
+        });
+
+
+
+
+        boost(".show").on("click",function(){
+            console.log(boost(this));
+             boost(this).gallery("show");
+            // setTimeout(function(){
+            //     alert("show time is up!");
+            //     wrapper.gallery("hide");
+            // },10000);
+        });*/
+
+
+            document.addEventListener("click",function(){
+                console.log(121212);
+            });
+        })(); 
+
+        
+
+    </script>
+
+</body>
+</html>

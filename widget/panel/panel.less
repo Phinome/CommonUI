@@ -1,0 +1,64 @@
+
+@panel-border:1px solid #ddd;
+@panel-heightlarger:35px;
+@panel-heightsmall:30px;
+@panel-paddinglarger: 15px;
+@panel-paddingsmall: 10px;
+@panel-fontlarger:16px;
+@panel-fontsmall:14px;
+@panel-lineheight:25px;
+.@{namespace}panel-left{
+  text-align: left;
+}
+.@{namespace}panel-center{
+  text-align: center;
+}
+.@{namespace}panel-right{
+  text-align: right;
+}
+.@{namespace}panel-border{
+  border-left:@panel-border;
+  border-right:@panel-border;
+}
+.@{namespace}panel-header{
+  height: @panel-heightlarger;
+  padding: 0 @panel-paddinglarger;
+  font-size: @panel-fontlarger;
+  line-height: @panel-heightlarger;
+  border-top:@panel-border;
+  border-bottom:@panel-border;
+}
+.@{namespace}panel-body{
+  font-size: @panel-fontsmall;
+  padding: @panel-paddingsmall @panel-paddinglarger;
+  line-height: @panel-lineheight;
+  border-bottom: @panel-border;
+}
+.@{namespace}panel-footer{
+  height: @panel-heightsmall;
+  padding: 0 @panel-paddinglarger;
+  line-height: @panel-heightsmall;
+  border-bottom: @panel-border;
+}
+
+/*需要限制行数时，需要使用该类，并配合.@{namespace}panel-clamp确定具体行数*/
+.@{namespace}panel-box{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+/*可选择行数，多出...*/
+.@{namespace}panel-clamp1{
+  -webkit-line-clamp: 1;
+}
+.@{namespace}panel-clamp2{
+  -webkit-line-clamp: 2;
+}
+.@{namespace}panel-clamp3{
+  -webkit-line-clamp: 3;
+}
+ 
+
+
+

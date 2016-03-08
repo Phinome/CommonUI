@@ -1,0 +1,154 @@
+@formgroup-bottom-color: #EDEDED;
+@formgroup-background-color: #FFFFFF;
+@formgroup-font-color: #262626;
+@formgroup-placeholder-color: #999999;
+@active-border-color: #2eb6aa;
+@warning-border-color: #FFA000;
+@error-border-color: #E60D00;
+@formgroup-label-width: 85px;
+@formgroup-label-padding-left: 15px;
+@formgroup-label-font: @boost-font-size-link;
+@formgroup-height: 40px;
+@formgroup-line-height: 40px;
+@formgroup-btn: @boost-font-size-nav;
+@formgroup-icon: "\e878";
+
+.@{namespace}form {
+  border-top: 1px solid @formgroup-bottom-color;
+  border-bottom: 1px solid @formgroup-bottom-color;
+  .@{namespace}formgroup {
+    border-bottom: 1px solid @formgroup-bottom-color;
+    &:last-child {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.@{namespace}formgroup {
+  display: flex;
+  background-color: @formgroup-background-color;
+}
+
+.@{namespace}formgroup-label {
+  display: block;
+  width: @formgroup-label-width;
+  height: @formgroup-height;
+  padding-left: @formgroup-label-padding-left;
+  font-size: @formgroup-label-font;
+  line-height: @formgroup-line-height;
+  border: none;
+  color: @formgroup-font-color;
+}
+
+.@{namespace}formgroup-input {
+  display: block;
+  flex: 1;
+  height: @formgroup-height;
+  padding: 9px 10px;
+  line-height: 15px;
+  font-size: @formgroup-label-font;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: @formgroup-font-color;
+  &::-webkit-input-placeholder {
+    color: @formgroup-placeholder-color;
+  }
+  &::-moz-placeholder {
+    color: @formgroup-placeholder-color;
+  }
+  &:-ms-input-placeholder {
+    color: @formgroup-placeholder-color;
+  }
+}
+
+.@{namespace}formgroup-textarea {
+  display: block;
+  flex: 1;
+  resize: none;
+  outline: none;
+  font-size: @formgroup-label-font;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: @formgroup-font-color;
+  &::-webkit-input-placeholder {
+    color: @formgroup-placeholder-color;
+  }
+  &::-moz-placeholder {
+    color: @formgroup-placeholder-color;
+  }
+  &:-ms-input-placeholder {
+    color: @formgroup-placeholder-color;
+  }
+}
+
+.@{namespace}formgroup-select {
+  display: block;
+  flex: 1;
+  height: @formgroup-height;
+  padding: 9px 10px;
+  font-size: @formgroup-label-font;
+  line-height: 15px;
+  /*background: url("../images/select.png") right center no-repeat #FFF;*/
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.@{namespace}formgroup-btn {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.@{namespace}formgroup-error {
+  border: 1px solid @error-border-color;
+}
+.@{namespace}formgroup-warning {
+  border: 1px solid @warning-border-color;
+}
+
+.@{namespace}formgroup-success {
+  border: 1px solid @active-border-color;
+}
+
+.@{namespace}form-box {
+  border: 1px solid #d4d6d7;
+  .@{namespace}formgroup-label {
+    width: 70px;
+    height: 45px;
+    padding-left: 9px;
+    line-height: 45px;
+    text-align: justify;
+    &:after {
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      content: '';
+      vertical-align: top;
+    }
+  }
+  .@{namespace}formgroup-input {
+    height: 45px;
+    line-height: 45px;
+  }
+  .@{namespace}formgroup-ico {
+    display: block;
+    width: 30px;
+    height: 100%;
+    line-height: 45px;
+    text-align: center;
+    color: #c0c0c0;
+    &:after {
+      content: @formgroup-icon !important;
+      .font(@font-left);
+    }
+  }
+}

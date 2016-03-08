@@ -1,0 +1,64 @@
+@counter-btn-color: @color-white;
+@counter-btn-bg: @color-white;
+@counter-btn-border: #e6e4e3;
+@counter-btn-disabled: #e7e7e7;
+
+@counter-input-color: @color-font;
+@counter-input-bg: @color-white;
+@counter-input-border: @counter-btn-border;
+@counter-input-font-size: @boost-font-size-link;
+@counter-icon-font-size: @boost-font-size-nav;
+
+.@{namespace}counter {
+  display: table;
+}
+
+.@{namespace}counter-minus,
+.@{namespace}counter-plus,
+.@{namespace}counter-input {
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
+  font-size: @counter-input-font-size;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  background: #fff;
+}
+
+.@{namespace}counter-minus,
+.@{namespace}counter-plus {
+  width: 28px;
+  height: 30px;
+  border: 1px solid @counter-btn-border;
+  &.@{namespace}disabled {
+    background-color: @counter-btn-disabled;
+  }
+}
+
+.@{namespace}counter-minus:before {
+  .font(@font-minus);
+  color: @counter-input-color;
+  font-size: @counter-icon-font-size;
+  line-height: 30px;
+}
+
+.@{namespace}counter-plus:before {
+  .font(@font-plus);
+  color: @counter-input-color;
+  font-size: @counter-icon-font-size;
+  line-height: 30px;
+}
+
+.@{namespace}counter-input {
+  width: 35px;
+  padding: 6px 0;
+  border-style: solid none;
+  border-width: 1px;
+  border-color: @counter-input-border;
+  color: @counter-input-color;
+  background-color: @counter-input-bg;
+  text-align: center;
+}
+

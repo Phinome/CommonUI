@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="../../dist/boost.css">
+</head>
+
+<body>
+
+<section data-blend-widget="list" class="blend-list">
+    <div class="blend-list-item">
+        <div class="blend-list-item-content">123</div>
+        <span class="blend-list-item-delete">删除</span>
+    </div>
+    <div class="blend-list-item">
+        <div class="blend-list-item-content">1323423</div>
+        <span class="blend-list-item-delete">删除</span>
+    </div>
+    <div class="blend-list-item">
+        <div class="blend-list-item-content">12432343</div>
+        <span class="blend-list-item-delete">删除</span>
+    </div>
+</section>
+
+<button id="revert">revert</button>
+<br>
+<button id="add">add</button>
+<br>
+<button id="refresh">refresh</button>
+<br>
+<button id="destroy">destroy</button>
+<br>
+<button id="create">create</button>
+<br>
+
+<h2 style="font-size:16px;">更多列表：</h2>
+<section data-blend-widget="list" class="blend-list">
+    <div class="blend-list-item-more">
+        <div class="blend-list-item-content">我的订单<span class="blend-list-item-icon"></span></div>
+        <span class="blend-list-item-icon"></span>
+    </div>
+    <div class="blend-list-item-more">
+        <div class="blend-list-item-content">我的评价<span class="blend-list-item-icon"></span></div>
+    </div>
+    <div class="blend-list-item-more">
+        <div class="blend-list-item-content">我的收货地址<span class="blend-list-item-icon"></span></div>
+    </div>
+</section>
+
+
+<script src="../../dist/boost.js"></script>
+
+<script>
+    var $blendList = $('.blend-list').eq(0);
+    $blendList.list({
+        animate:false
+    });//.list('destroy');
+    $('#revert').click(function () {
+        $blendList.list('revert');
+    });
+    $('#add').click(function () {
+        $blendList.append([
+            '<div class="blend-list-item">',
+            '<div class="blend-list-item-content">12432343</div>',
+            '<span class="blend-list-item-delete">删除</span>',
+            '</div>'
+        ].join(''));
+        $blendList.list('refresh');
+    });
+    $('#refresh').click(function () {
+        $blendList.list('refresh');
+    });
+    $('#destroy').click(function () {
+        $blendList.list('destroy');
+    });
+    $('#create').click(function () {
+        $blendList.list();
+    });
+</script>
+
+</body>
+
+</html>

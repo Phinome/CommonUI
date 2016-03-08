@@ -1,0 +1,44 @@
+{
+  "name": "boostui",
+  "version": "0.0.1",
+  "description": "a boost ui",
+  "main": "dist/boostui.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clouda-team/boostui.git"
+  },
+  "keywords": [
+    "ui",
+    "clouda",
+    "boost"
+  ],
+  "author": "Clouda team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Clouda-team/boostui/issues"
+  },
+  "homepage": "https://github.com/Clouda-team/boostui",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "del": "~1.2.0",
+    "gulp": "~3.9.0",
+    "gulp-cssnano": "~2.1.1",
+    "gulp-gulp": "0.0.4",
+    "gulp-less": "~3.0.5",
+    "gulp-rename": "~1.2.2",
+    "gulp-replace": "~0.5.4",
+    "gulp-rev-collector": "^1.0.2",
+    "gulp-size": "~2.0.0",
+    "gulp-image": "~1.3.1",
+    "gulp-uglify": "~1.5.2"
+  },
+  "dependencies": {
+    "fecs": "~0.6.3-beta.3"
+  }
+}

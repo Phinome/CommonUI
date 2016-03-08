@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <title>loading</title>
+    <link rel="stylesheet" href="../../dist/boost.css">
+    <style>
+    .lodingGif{
+        border: none;
+        background: url(http://fedev.baidu.com/~haoxin02/test/img/loading.gif) 0 0 no-repeat; 
+        background-size: 100% 110%;
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        margin: -40px 0 0 -25px;
+        left: 50%;
+        top: 50%;
+    }
+    </style>
+</head>
+	
+<body>
+
+    <button onclick="triggerLoading()">打开loading</button>
+    <br/><br/>
+    <button onclick="closeLoading()">关闭loading</button>
+    <!-- <div class="j_test_loading" style="display:none">loading</div> -->
+    <script src="../../dist/boost.js"></script>
+    <script>
+    	var loading = $.blend.loading({
+                loadingImgClass: "lodingGif"
+             });
+    	function triggerLoading(){
+        	loading.show();
+    	}
+    	function closeLoading(){
+        	loading.hide();
+    	}
+        $('.j_test_loading').loading();
+    </script>
+</body>
+
+</html>

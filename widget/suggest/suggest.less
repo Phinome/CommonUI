@@ -1,0 +1,169 @@
+@suggest-magnifier: "\e88b";
+@suggest-cha: "\e6ad";
+@suggest-arrow: "\e861";
+@suggest-font-color: #262626;
+@suggest-input-color: #f9f9f9;
+
+.@{namespace}suggest-wrapBlue2, .@{namespace}suggest-wrap, .@{namespace}suggest-wrap2 {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background-color: @white;
+}
+
+.@{namespace}suggest-input, .@{namespace}suggest-input-blue, .@{namespace}suggest-input-red, .@{namespace}suggest-input-gray {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 30px;
+  margin: 10px 10px;
+  line-height: 30px;
+  border: 1px solid @table-border-color;
+  background: @white;
+  .@{namespace}suggest-ico {
+    &:before {
+      display: block;
+      width: 34px;
+      height: 100%;
+      font-size: @font-size-lg;
+      line-height: 30px;
+      text-align: center;
+      content: @suggest-magnifier !important;
+      .font(@font-left);
+      color: #aaa;
+    }
+  }
+  input {
+    flex: 1;
+    display: block;
+    height: 20px;
+    padding: 5px 0;
+    font-size: @font-size-base;
+    line-height: 20px;
+    color: @suggest-font-color;
+    border: none;
+    outline: 0;
+  }
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    color: #c0c0c0;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #c0c0c0;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #c0c0c0;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #c0c0c0;
+  }
+  .@{namespace}suggest-delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    width: 45px;
+    height: 30px;
+    text-decoration: none;
+    &:after {
+      margin-left: 18px;
+      content: @suggest-cha !important;
+      .font(@font-left);
+      font-size: @font-size-lg;
+      color: #b2b2b2;
+    }
+  }
+}
+
+.@{namespace}suggest-list {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: @white;
+  border-top: 1px solid #ededed;
+  li {
+    padding: 7px 15px;
+    border-bottom: 1px solid #ededed;
+    p {
+      margin: 0;
+      font-size: 1.3rem;
+      line-height: 20px;
+      color: #aaa;
+    }
+    p:first-child {
+      font-size: @font-size-base;
+      color: @suggest-font-color;
+    }
+  }
+}
+
+.@{namespace}suggest-input-blue, .@{namespace}suggest-input-red, .@{namespace}suggest-input-gray {
+  margin: 0;
+  background: @suggest-input-color;
+  input {
+    background-color: #f9f9f9;
+    padding-left: 5px;
+  }
+  .@{namespace}suggest-ico {
+    display: block;
+    background-color: #18adea;
+    &:before {
+      width: 45px;
+      color: @white;
+    }
+  }
+  .@{namespace}suggest-delete {
+    right: 45px;
+    width: 40px;
+  }
+}
+
+.@{namespace}suggest-wrapBlue2 {
+  background-color: #3bafda;
+  .@{namespace}suggest-input-blue {
+    border: none;
+  }
+  input {
+    background-color: @white;
+  }
+  .@{namespace}suggest-ico {
+    background-color: #4fc1e9;
+  }
+}
+
+.@{namespace}suggest-input-gray .@{namespace}suggest-ico {
+  background-color: #666;
+}
+
+.@{namespace}suggest-input-red .@{namespace}suggest-ico {
+  background-color: #e71225;
+}
+
+.@{namespace}suggest-wrap2 {
+  .@{namespace}suggest {
+    display: flex;
+    .@{namespace}suggest-input-gray, .@{namespace}suggest-input-blue, .@{namespace}suggest-input-red {
+      flex: 1;
+    }
+  }
+}
+
+/*.@{namespace}suggest-input-gray{
+    background-color: @white;
+    input{
+        background-color: @white;
+    }
+}*/
+.@{namespace}suggest-arrow {
+  display: block;
+  width: 31px;
+  height: 100%;
+  padding-left: 4px;
+  line-height: 30px;
+  &:before {
+    content: @suggest-arrow !important;
+    .font(@font-left);
+    font-size: 1.8rem;
+    color: #777;
+  }
+}

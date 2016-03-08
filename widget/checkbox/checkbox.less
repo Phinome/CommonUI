@@ -1,0 +1,116 @@
+
+.@{namespace}checkbox {
+  position: relative;
+  display: inline-block;
+  font-family: 'boostfont';
+  border: solid 1px @color-checkbox-border;
+  background-color: @color-checkbox-backgroud;
+  vertical-align: middle;
+}
+
+.@{namespace}checkbox-label {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: @color-font;
+  vertical-align: middle;
+}
+
+.@{namespace}checkbox-red {
+  .@{namespace}checkbox-checked {
+    border: none;
+    background-color: @color-danger-bg;
+  }
+  .@{namespace}checkbox-dot:before {
+    background-color: #fd461e;
+  }
+}
+
+.@{namespace}checkbox-checked {
+  border: none;
+  background-color: @color-checkbox-checked;
+}
+
+.@{namespace}checkbox-checked:before {
+  position: absolute;
+  .font(@font-check);
+  font-size: 15px;
+  line-height: 18px;
+  color: @color-checkbox-icon;
+}
+
+.@{namespace}checkbox-default, .@{namespace}checkbox-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.@{namespace}checkbox-default:before {
+  top: 1px;
+  left: 2px;
+}
+
+.@{namespace}checkbox-dot:before {
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  border-radius: 50%;
+  background-color: @color-checkbox-checked;
+}
+
+.@{namespace}checkbox-square {
+  width: 19px;
+  height: 19px;
+}
+
+.@{namespace}checkbox-square:before {
+  top: 0;
+  left: 1px;
+}
+
+.@{namespace}checkbox-group {
+  display: flex;
+  padding: 0 16px;
+  border-bottom: 1px solid @color-border;
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .@{namespace}checkbox {
+    display: block;
+    margin-top: 12px;
+  }
+
+  .@{namespace}checkbox-label {
+    display: block;
+    line-height: 45px;
+    height: 45px;
+    -webkit-box-flex: 1;
+                flex: 1;
+
+  }
+
+  .@{namespace}checkbox-checked {
+    background-color: @color-checkbox-checked;
+  }
+
+  .@{namespace}checkbox-dot.@{namespace}checkbox-checked {
+    background-color: @color-checkbox-backgroud;
+    border: solid 1px @color-checkbox-border;
+  }
+}
+
+.@{namespace}checkbox-disabled {
+  border-color: @color-checkbox-disabled-border;
+  background-color: @color-checkbox-disabled-background;
+  &:hover {
+    cursor: not-allowed;
+  }
+  &:before {
+    color: @color-checkbox-disabled;
+  }
+}

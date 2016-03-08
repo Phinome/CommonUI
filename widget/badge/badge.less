@@ -1,0 +1,91 @@
+@badge-primary: @brand-primary;
+@badge-secondary: @brand-secondary;
+@badge-success: @brand-success;
+@badge-info: @brand-info;
+@badge-warning: @brand-warning;
+@badge-danger: @brand-danger;
+@badge-default: @color-badge;
+@reddot-bg: #FF3636;
+
+.@{namespace}badge {
+  display: inline-block;
+  min-width: 20px;
+  height: 14px;
+  padding: 0 2px;
+  vertical-align: baseline;
+  font-size: 10px;
+  line-height: 12px;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  border: solid 1px;
+  border-radius: 0;
+  background-color: @badge-default;
+
+  &.@{namespace}badge-empty {
+    padding: 0 9px;
+    background-color: transparent;
+    color: @badge-default;
+  }
+  &.@{namespace}badge-large {
+    height: 18px;
+    line-height: 16px;
+  }
+}
+
+.@{namespace}badge-primary {
+  background-color: @badge-primary;
+  &.@{namespace}badge-empty {
+    color: @badge-primary;
+  }
+}
+
+.@{namespace}badge-secondary {
+  background-color: @badge-secondary;
+  &.@{namespace}badge-empty {
+    color: @badge-secondary;
+  }
+}
+
+.@{namespace}badge-success {
+  background-color: @badge-success;
+  &.@{namespace}badge-empty {
+    color: @badge-success;
+  }
+}
+
+.@{namespace}badge-info {
+  background-color: @badge-info;
+  &.@{namespace}badge-empty {
+    color: @badge-info;
+  }
+}
+
+.@{namespace}badge-warning {
+  background-color: @badge-warning;
+  &.@{namespace}badge-empty {
+    color: @badge-warning;
+  }
+}
+
+.@{namespace}badge-danger {
+  background-color: @badge-danger;
+  &.@{namespace}badge-empty {
+    color: @badge-danger;
+  }
+}
+
+.@{namespace}reddot {
+  position: absolute;
+  right: -1.7rem;
+  top: -1.7rem;
+  display: block;
+  padding: .2rem;
+  font-size: 12px;
+  line-height: 2.2rem;
+  text-align: center;
+  border-radius: 50%;
+  z-index: 10000;
+  color: #fff;
+  background-color: @reddot-bg;
+}

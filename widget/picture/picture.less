@@ -1,0 +1,140 @@
+
+@defaultImgPadding:0px;
+@calcWidth:~"100% - 6px";
+@radiusValue:10px;
+
+@picture-padding-width: 10px;
+@picture-font-size: @boost-font-size-nav;
+@picture-font-size-small: @boost-font-size-link;
+
+.@{namespace}picture{
+  overflow-x:hidden;
+}
+
+.@{namespace}picture img{
+  width:100%;
+}
+
+
+.@{namespace}picture-radius img{
+  border-radius: @radiusValue;
+}
+
+/*
+* picture theme default
+*/
+
+.@{namespace}picture-default{
+	margin:10px;
+  position: relative;
+}
+
+.@{namespace}picture-default img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;	
+}
+
+.@{namespace}picture-default .@{namespace}picture-title{
+  
+}
+
+.@{namespace}picture-default .@{namespace}picture-title-default{
+  text-align: center;
+  font-size: @picture-font-size-small;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+.@{namespace}picture-default .@{namespace}picture-title-cover{
+  display: block;
+  width: calc(@calcWidth);
+  height:30px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  padding-left:10px;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  bottom:10px;
+  left:@defaultImgPadding;
+}
+
+/*
+* picture theme full, 满屏
+*/
+.@{namespace}picture-full{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.@{namespace}picture-full img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;  
+}
+
+.@{namespace}picture-full .@{namespace}picture-title-default{
+  text-align: center;
+  font-size: @picture-font-size;
+  color: #333333;
+}
+
+
+.@{namespace}picture-full .@{namespace}picture-title-cover{
+  display: block;
+  width: 100%;
+  height:30px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  padding-left: @picture-padding-width;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  bottom:10px;
+  left:0
+}
+
+
+.@{namespace}picture-one {
+  margin: 0 10px;
+  background: #ffffff;
+}
+.@{namespace}picture-one img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding: 2px;
+  border: 1px solid #dfdfdf;
+}
+
+.@{namespace}picture-two {
+  margin: 0 10px;
+  background: #ffffff;
+  position: relative;
+}
+.@{namespace}picture-two img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.@{namespace}picture-two figcaption {
+  display: block;
+  width: 100%;
+  height:20px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  padding-left:10px;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  bottom:0px;
+  left:0
+}

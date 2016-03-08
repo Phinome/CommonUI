@@ -1,0 +1,45 @@
+@separator-color: #ddd;
+@separator-line-height: 2px;
+@separator-width: auto;
+@separator-rect-height: 20px;
+@separator-rect2-border-color: darken(@separator-color, 5%);
+@separator-rect1-border-top-color: darken(@separator-color, 7%);
+@separator-rect1-border-top2-color: darken(@separator-color, 2%);
+@separator-margin: 11px;
+
+.@{namespace}separator {
+  width: @separator-width;
+  margin-top: @separator-margin;
+  margin-bottom: @separator-margin;
+  border-top: @separator-line-height solid @separator-color;
+}
+
+.@{namespace}separator-dashed {
+  margin-top: @separator-margin;
+  margin-bottom: @separator-margin;
+  border-top: @separator-line-height dashed @separator-color;
+}
+
+.@{namespace}separator-rect1 {
+  height: @separator-rect-height;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  background: @separator-color;
+  border-top: 1px solid @separator-rect1-border-top-color;
+  .@{namespace}separator-rect1-top {
+    border-top: 2px solid @separator-rect1-border-top2-color;
+  }
+  box-shadow: 0 1px 0 #ebeaea inset;
+}
+
+.@{namespace}separator-rect2 {
+  height: @separator-rect-height;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  background: @separator-color;
+  border-top: 1px solid @separator-rect2-border-color;
+  border-bottom: 1px solid @separator-rect2-border-color;
+  box-shadow: 0 1px 0 #ebeaea inset;
+}

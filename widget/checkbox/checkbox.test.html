@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>checkbox</title>
+    <link rel="stylesheet" href="../../dist/boost.css">
+    <style type="text/css">
+        #checkgroup {
+            border-bottom: 1px solid #edebeb;
+            border-top: 1px solid #edebeb;
+        }
+
+        #checkall {
+            margin: 0 20px;
+        }
+
+        #checkall > div {
+            margin-bottom: 10px;
+        }
+
+        #check {
+            margin: 0 20px;
+        }
+
+        #radio {
+            margin: 0 20px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>button</h2>
+<div style="margin: 0 20px;" id="checkbutton" data-blend-widget="checkbox" data-blend-checkbox='{"type":"radio","values":["button1","button2"],"itemSelector":".blend-button","itemSelected":"blend-button-checkbox-checked"}'>
+
+    <button class="blend-button blend-button-red blend-button-checkbox">nocheck</button>
+    <button class="blend-button blend-button-red blend-button-checkbox blend-button-checkbox-checked">checked</button>
+
+</div>
+
+<div style="margin: 20px auto;background-color: #ccc;">
+    <div id="checkbox" data-blend-widget="checkbox" data-blend-checkbox='{"type": "radio", "values": ["radio1"]}'>
+        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">AA</label>
+        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">BB</label>
+    </div>
+</div>
+
+<h2>group</h2>
+
+<div id="checkgroup" data-blend-widget="checkbox"
+     data-blend-checkbox='{"type":"radio","values":["radio1","radio2","radio3"]}'>
+    <div class="blend-checkbox-group">
+        <label class="blend-checkbox-label">就是这个原因了</label>
+        <span class="blend-checkbox blend-checkbox-dot blend-checkbox-checked"></span>
+    </div>
+    <div class="blend-checkbox-group">
+        <label class="blend-checkbox-label">不是因为这个</label>
+        <span class="blend-checkbox blend-checkbox-dot"></span>
+    </div>
+    <div class="blend-checkbox-group">
+        <label class="blend-checkbox-label">让我再想一想</label>
+        <span class="blend-checkbox blend-checkbox-dot"></span>
+    </div>
+</div>
+
+<h2>带全选checkbox</h2>
+
+<div id="checkall" class="blend-checkbox-red" data-blend-widget="checkbox" data-blend-checkbox='{"type":"group", "disabled": true}'>
+    <div>
+        <span class="blend-checkbox blend-checkbox-square blend-checkbox-all"></span><label
+            class="blend-checkbox-label">全选</label>
+    </div>
+    <div>
+        <span class="blend-checkbox blend-checkbox-default blend-checkbox-checked"></span><label
+            class="blend-checkbox-label">A</label>
+        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">B</label>
+        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">C</label>
+    </div>
+    <div>
+        <span class="blend-checkbox blend-checkbox-square blend-checkbox-all"></span><label
+            class="blend-checkbox-label">全选</label>
+    </div>
+
+</div>
+
+<h2>方形checkbox</h2>
+
+<div id="check" data-blend-widget="checkbox" data-blend-checkbox='{"type":"group"}'>
+    <span class="item blend-checkbox blend-checkbox-square blend-checkbox-checked"></span><label
+        class="blend-checkbox-label">A</label>
+    <span class="item blend-checkbox blend-checkbox-square"></span><label class="blend-checkbox-label">B</label>
+</div>
+
+<h2>radio</h2>
+
+<div id="radio" data-blend-widget="checkbox"
+     data-blend-checkbox='{"type":"radio","values":["radio1","radio2"]}'>
+    <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">AA</label>
+    <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">BB</label>
+</div>
+
+
+
+<script src="../../dist/boost.js"></script>
+<script type="text/javascript">
+    window.boost = $.noConflict(true);
+</script>
+</body>
+
+</html>

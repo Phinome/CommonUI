@@ -1,0 +1,132 @@
+.@{namespace}topnav {
+  display: none;
+  padding: 0 6px;
+}
+
+.@{namespace}topnav a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.@{namespace}topnav-wrapper {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  border: solid 1px #ddd;
+  background-color: #fff;
+}
+
+.@{namespace}topnav-item {
+  display: block;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 38px;
+  text-align: center;
+}
+
+.@{namespace}topnav-item:not(:last-child):after {
+  display: block;
+  position: absolute;
+  top: 13px;
+  right: 0px;
+  width: 1px;
+  height: 11px;
+  content: "";
+  background-color: #c8c8c8;
+}
+
+.@{namespace}topnav-item span {
+  position: relative;
+  display: block;
+  height: 38px;
+  font-size: 16px;
+  line-height: 38px;
+  color: #262626;
+}
+
+.@{namespace}topnav-item > ul {
+  display: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  /*width: calc(100% + 3px);*/
+  width: 100%;
+  -webkit-box-shadow: 2px 0 2px #e4e4e4,
+  -2px 0 2px #e4e4e4,
+  0 3px 3px #e4e4e4;
+  box-shadow: 2px 0 2px #e4e4e4,
+  -2px 0 2px #e4e4e4,
+  0 3px 3px #e4e4e4;
+  background-color: #fff;
+  /*margin-left: -1px;*/
+  border-top: solid 2px #666;
+}
+
+.@{namespace}topnav-item > ul li {
+  position: relative;
+  height: 36px;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 36px;
+  text-align: center;
+  list-style: none;
+  color: #262626;
+  &:not(:last-child) a {
+    border-bottom: 1px solid @color-border;
+  }
+}
+
+.@{namespace}topnav-item > ul li a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  color: @color-font;
+}
+
+.@{namespace}topnav-item > ul li:last-child {
+  border: none;
+}
+
+.@{namespace}topnav-item.blend-topnav-active {
+  border-bottom: none;
+}
+
+.@{namespace}topnav-active > ul:before {
+  display: block;
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  content: "";
+  border: solid 7px transparent;
+  border-bottom-color: #666;
+}
+
+span.@{namespace}topnav-arrow {
+  text-indent: -14px;
+}
+
+span.@{namespace}topnav-arrow:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border: 4px solid transparent;
+  content: "";
+  z-index: 1;
+  /*transition: all 0.2s;*/
+}
+
+span.@{namespace}topnav-uparrow:after {
+  top: 13px;
+  border-bottom-color: @color-font;
+}
+
+span.@{namespace}topnav-downarrow:after {
+  top: 17px;
+  border-top-color: @color-font;
+}

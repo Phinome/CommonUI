@@ -1,0 +1,73 @@
+@font-size-header: @boost-font-size-titlebar;
+@font-size-header-lr: @boost-font-size-link;
+@header-height: 44px;
+
+.@{namespace}boost .@{namespace}header {
+  display: none;
+}
+
+.@{namespace}header {
+  display: flex;
+  width: 100%;
+  height: @header-height;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: @color-titlebar-background;
+  color: @color-titlebar;
+}
+
+.@{namespace}header a{
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.@{namespace}header-left,
+.@{namespace}header-title,
+.@{namespace}header-right {
+  display: block;
+}
+
+.@{namespace}header-left, .@{namespace}header-right {
+  flex: 1;
+  align-items: center;
+  font-size: @font-size-header-lr;
+}
+.@{namespace}header-left {
+  padding-left: 7px;
+  text-align: left;
+}
+.@{namespace}header-title {
+  text-align: center;
+  line-height: @header-height;
+}
+
+.@{namespace}header-right {
+  padding-right: 10px;
+  text-align: right;
+}
+
+.@{namespace}header-item {
+  .highlight();
+  height:28px;
+  color: @color-titlebar;
+}
+
+.@{namespace}header-title .@{namespace}header-item {
+  font-size: @font-size-header;
+}
+
+.@{namespace}action-back-icon {
+  font-size: 16px;
+  .font(@font-left);
+  color: @color-titlebar-backicon;
+  content: "";
+  em{
+    font-size:22px;
+    font-style:normal
+  }
+}

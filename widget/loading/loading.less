@@ -1,0 +1,49 @@
+@loading-width: 54px;
+@loading-zindex: 54px;
+@loading-duration: .6s;
+@loading-text-color: #262626;
+
+.@{namespace}loading{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 170px;
+  height:  130px;
+  margin: -65px 0 0 -85px;
+  background-color: #fff;
+  border:solid 1px #e0e0e0;
+  box-shadow: 0 0 1px 1px #e0e0e0;
+  .@{namespace}loading-default{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: @loading-width;
+    height: @loading-width;
+    margin: -40px 0 0 -27px;
+    z-index: @loading-zindex;
+    -webkit-animation: rotation @loading-duration infinite linear;
+    animation: rotation @loading-duration infinite linear;
+    border:2px solid rgba(240,240,240,1);
+    border-top: 2px solid rgba(102,102,102,1);
+    border-radius: 100%;
+  }
+  .@{namespace}loading-word{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color:@loading-text-color;
+    text-align: center;
+  }
+}
+
+@-webkit-keyframes rotation {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(359deg);}
+}
+@keyframes rotation {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(359deg);}
+}

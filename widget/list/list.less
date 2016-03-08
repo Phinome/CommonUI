@@ -1,0 +1,81 @@
+@list-arrow: "\e878";
+
+.@{namespace}list {
+  overflow: hidden;
+}
+
+.@{namespace}list-card {
+  margin: 6px;
+  border: 1px solid @color-border;
+  .@{namespace}list-item:last-child {
+    border: none;
+  }
+}
+
+.@{namespace}list-item, .@{namespace}list-item-more {
+  overflow: hidden;
+  position: relative;
+  height: 46px;
+  font-size: 16px;
+  line-height: 46px;
+  text-decoration: none;
+  color: @color-font;
+  border-bottom: 1px solid @color-border;
+}
+
+.@{namespace}list-animation {
+  .@{namespace}list-item {
+    -webkit-transition: height .3s ease-in 0s;
+    transition: height .3s ease-in 0s;
+  }
+  .@{namespace}list-item-content {
+    -webkit-transition: left .2s ease-in 0s;
+    transition: left .2s ease-in 0s;
+  }
+
+}
+
+.@{namespace}list-item-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #FFFFFF;
+}
+
+.@{namespace}list-item-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 54px;
+  height: 46px;
+  font-size: 13px;
+  line-height: 46px;
+  z-index: 1;
+  background-color: @color-danger;
+  text-decoration: none;
+  color: @color-white;
+  text-align: center;
+  .text-overflow();
+  .highlight();
+}
+
+.@{namespace}list-item-more {
+  height: 43px;
+  line-height: 43px;
+  .@{namespace}list-item-content {
+    padding: 0 10px 0 20px;
+    line-height: 43px;
+    font-size: 14px;
+  }
+  .@{namespace}list-item-icon:after {
+    float: right;
+    content: @list-arrow !important;
+    .font(@font-left);
+    color: #c0c0c0;
+  }
+}
+
+

@@ -1,0 +1,172 @@
+@card-padding-value: 10px;
+@card-title-font-size: 16px;
+@card-title-color: #262626;
+
+@push-font-color: @color-font;
+@push-font-gray: @color-font-grey;
+@push-font-white: @color-white;
+
+.@{namespace}card {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  padding: @card-padding-value;
+  border-bottom: solid 1px #dcdcdc;
+  background-color: #fff;
+  &:after {
+    display: flex;
+    width: 20px;
+    height: 22px;
+    align-self: center;
+    font-family: 'boostfont';
+    content: '\e604';
+    font-size: 18px;
+    color: #c5c5c5;
+  }
+
+  &.@{namespace}card-no-icon:after {
+    content: '';
+  }
+
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+}
+
+.@{namespace}card-img-view {
+  width: 65px;
+  height: 65px;
+  margin-right: 10px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.@{namespace}card-content-view {
+  overflow: hidden;
+  height: 100%;
+  max-height: 65px;
+  padding-right: 10px;
+  -webkit-flex: 1;
+          flex: 1;
+  .@{namespace}card-text {
+    // box-orient 和 line-clamp 相互配合才能出现省略
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+  }
+}
+
+.@{namespace}card-title {
+  overflow: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  font-size: @card-title-font-size;
+  color: @card-title-color;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+.@{namespace}card-sub-title {
+  font-size: 14px;;
+  color: #777;
+  line-height: 22px;
+  &.@{namespace}card-small-title {
+    font-size: 12px;
+    line-height: 16px;
+    color: #999;
+  }
+}
+
+.@{namespace}card {
+  .@{namespace}star {
+    width: 100%;
+    display: block;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-box-align: center;
+    align-items: center;
+    .@{namespace}star-item {
+      width: 19px;
+      height: 14px;
+      background-size: 19px 28px;
+      background-position: 0 -14px;
+      &.selected {
+        background-position: 0 0;
+      }
+    }
+    .@{namespace}star-num {
+      height: 18px;
+      line-height: 22px;
+      font-size: 18px;
+    }
+  }
+}
+
+.@{namespace}card-row {
+  display: -webkit-flex;
+  display: flex;
+  height: 28px;
+  -webkit-box-pack: start;
+  -webkit-box-align: end;
+  align-items: flex-end;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.@{namespace}card-row-item {
+  display: inline-block;
+  color: #999;
+}
+
+.@{namespace}card {
+  .@{namespace}badge {
+    background-color: #ff6600;
+  }
+}
+
+.@{namespace}card-group {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+
+}
+
+.@{namespace}card-group-item {
+  width: 146px;
+  img {
+    width: 100%;
+    height: 110px;
+    margin-bottom: 5px;
+  }
+  .@{namespace}card-group-title {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+  }
+  .@{namespace}card-group-sub-title {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    color: #999;
+  }
+}

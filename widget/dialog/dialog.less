@@ -1,0 +1,132 @@
+@dialog-zindexlarger: @boost-zindex-larger;
+@dialog-zindexsmall: @boost-zindex-large;
+@dialog-width: 250px;
+@dialog-duration: 0.2s;
+@dialog-header-height: 40px;
+@dialog-footer-height: 40px;
+
+@dialog-padding-lr: 16px;
+@dialog-padding-tb: 13px;
+@dialog-line-height: 20px;
+@dialog-body-margin: 8px;
+
+@dialog-body-color: #262626;
+
+.@{namespace}dialog {
+  position: fixed;
+  display: block;
+  width: @dialog-width;
+  padding: 0;
+  z-index: @dialog-zindexlarger;
+  background-color: @color-dialog-backgroud;
+  color: @color-dialog-font;
+  /*visibility: hidden;*/
+  opacity: 0;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  /*
+  -webkit-transition-property: -webkit-transform,opacity;
+  transition-property: transform,opacity;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  */
+  &.@{namespace}dialog-no-transition {
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+  }
+
+}
+
+.@{namespace}dialog-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: @color-black;
+  z-index: @dialog-zindexsmall;
+}
+
+.@{namespace}dialog-show {
+  /*visibility: visible;*/
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  -webkit-transition-duration: @dialog-duration;
+  transition-duration: @dialog-duration;
+  /*
+    -webkit-transition: transform  @dialog-duration  ease-in-out;
+    transition: transform @dialog-duration  ease-in-out;
+  */
+}
+
+.@{namespace}dialog-header {
+  height: @dialog-header-height;
+  margin: 0;
+  padding: 0;
+  line-height: @dialog-header-height;
+  font-size: @boost-font-size-nav;
+  font-weight: bold;
+  color: @color-dialog-header-text;
+  text-align: center;
+  border-bottom: solid 1px #ddd;
+}
+
+.@{namespace}dialog-body {
+  padding: @dialog-padding-tb @dialog-padding-lr;
+  font-size: @boost-font-size-link;
+  line-height: @dialog-line-height;
+  border-bottom: solid 1px @color-dialog-border;
+  color: @dialog-body-color;
+  &.@{namespace}dialog-tips {
+    text-align: center;
+  }
+}
+
+.@{namespace}dialog-link {
+  color: @color-dialog-link;
+}
+
+.@{namespace}dialog-phone {
+  color: @color-dialog-phone;
+}
+
+.@{namespace}dialog-footer {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  height: @dialog-footer-height;
+  line-height: @dialog-footer-height;
+}
+
+.@{namespace}dialog-cancel,
+.@{namespace}dialog-confirm {
+  display: block;
+  -webkit-box-flex: 1;
+              flex: 1;
+  width: 0;
+  text-align: center;
+  background-color: @color-dialog-footer;
+  font-size: @boost-font-size-nav;
+  color: @color-dialog-font;
+}
+
+.@{namespace}dialog-btn {
+  height: @dialog-footer-height;
+  line-height: @dialog-footer-height;
+}
+
+.@{namespace}dialog-btn:hover, .@{namespace}dialog-btn:focus {
+  text-decoration: none;
+}
+
+.@{namespace}dialog-btn:not(:first-child) {
+  border-left: solid 1px @color-dialog-border;
+}
+
+.@{namespace}dialog-text-center {
+  text-align: center;
+}
