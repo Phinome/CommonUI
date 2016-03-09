@@ -3300,8 +3300,7 @@ $.widget('blend.address', {
      * 组件的默认选项
      */
     options: {
-        btnClass: NAMESPACE + 'address-btn',
-
+        btnClass: NAMESPACE + 'address-btn'
     },
     /**
      * _create 创建组件时调用一次

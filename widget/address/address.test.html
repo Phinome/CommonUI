@@ -29,7 +29,7 @@
             <p class="blend-address-detail blend-address-btn">四川省 成都市<span class="blend-address-arrow"></span></p>
         </div>
         <div class="blend-address-input">
-            <textarea class="blend-address-detail blend-address-gray" value="">北郊斧头山成都大熊猫繁育基地动物园区</textarea>
+            <textarea class="blend-address-detail blend-address-gray">北郊斧头山成都大熊猫繁育基地动物园区</textarea>
         </div>
     </div>
 </div>
@@ -57,7 +57,7 @@
     });
 
     $('#asyn').address({}).on("address:click", function (){
-        alert("点击事件");
+        // alert("点击事件");
     });
     
     $('#validate').find('.blend-address-input').eq(1).formgroup({
@@ -80,6 +80,17 @@
 
                 }
             });
+        }
+    });
+
+    $('.blend-address-arrow').click(function () {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                alert([position.coords.latitude, position.coords.longitude].join(','));
+            })
+        }
+        else {
+            alert("定位不可用!");
         }
     });
 </script>

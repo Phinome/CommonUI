@@ -8,19 +8,17 @@
 @reddot-bg: #FF3636;
 
 .@{namespace}badge {
+  position: relative;
   display: inline-block;
   min-width: 20px;
-  height: 14px;
   padding: 0 2px;
   vertical-align: baseline;
   font-size: 10px;
   line-height: 12px;
-  color: #fff;
   white-space: nowrap;
   text-align: center;
-  border: solid 1px;
+  border: solid 1px transparent;
   border-radius: 0;
-  background-color: @badge-default;
 
   &.@{namespace}badge-empty {
     padding: 0 9px;
@@ -31,6 +29,11 @@
     height: 18px;
     line-height: 16px;
   }
+}
+
+.@{namespace}badge-default {
+  color: #fff;
+  background-color: @badge-default;
 }
 
 .@{namespace}badge-primary {
@@ -75,17 +78,38 @@
   }
 }
 
-.@{namespace}reddot {
+.@{namespace}badge-reddot {
   position: absolute;
-  right: -1.7rem;
-  top: -1.7rem;
-  display: block;
-  padding: .2rem;
-  font-size: 12px;
-  line-height: 2.2rem;
-  text-align: center;
-  border-radius: 50%;
-  z-index: 10000;
+  -webkit-transform: translateX(-20%);
+  transform: translateX(-20%);
+  top: -15px;
+  height: 20px;
+  border-radius: 10px;
+  min-width: 20px;
+  background: @reddot-bg;
+  border: 1px solid transparent;
   color: #fff;
-  background-color: @reddot-bg;
+  line-height: 18px;
+  text-align: center;
+  padding: 0 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  -webkit-transform-origin: -10% center;
+  transform-origin: -10% center;
+  z-index: 100;
+  font-family: tahoma;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+.@{namespace}badge-dot {
+  position: absolute;
+  top: -4px;
+  transform: translateX(-55%);
+  transform-origin: 0 center;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #f50;
+  z-index: 100;
+  box-shadow: 0 0 0 1px #fff;
 }
