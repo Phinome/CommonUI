@@ -7,9 +7,12 @@
 }
 
 .@{namespace}header {
+  display: -webkit-box;
   display: flex;
   width: 100%;
   height: @header-height;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -33,8 +36,11 @@
 }
 
 .@{namespace}header-left, .@{namespace}header-right {
-  flex: 1;
+  -webkit-box-flex: 1;
+              flex: 1;
+  -webkit-box-align: center;
   align-items: center;
+  line-height: 44px;
   font-size: @font-size-header-lr;
 }
 .@{namespace}header-left {

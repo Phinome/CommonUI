@@ -6404,24 +6404,22 @@ $.widget('blend.slider', {
             that._spin();
         },false);
 
-        return;
-
         /*
-        * matchMedia.addListener() 在安卓手机上支持太差，先注释掉
-        if (typeof win.matchMedia !== 'undefined') {
-          var mql = win.matchMedia("(orientation: portrait)");
-          alert(mql);
-          mql.addListener(function(m) {
-            alert('matchMedia');
-          	if(m.matches) {} else {}
-          });
-        }else{
-          var whichEvent = ('orientationchange' in win) ? 'orientationchange' : 'resize';
-          win.addEventListener(whichEvent, function(){
-              alert('orientationchange or resize ---');
-          },false);
-        }
-        */
+         * matchMedia.addListener() 在安卓手机上支持太差，先注释掉
+         if (typeof win.matchMedia !== 'undefined') {
+         var mql = win.matchMedia("(orientation: portrait)");
+         alert(mql);
+         mql.addListener(function(m) {
+         alert('matchMedia');
+         if(m.matches) {} else {}
+         });
+         }else{
+         var whichEvent = ('orientationchange' in win) ? 'orientationchange' : 'resize';
+         win.addEventListener(whichEvent, function(){
+         alert('orientationchange or resize ---');
+         },false);
+         }
+         */
 
     },
     /**
@@ -6429,16 +6427,10 @@ $.widget('blend.slider', {
      * @private
      */
     _init: function () {
-
-
-
-
         var opts = this.options;
         var that = this;
         var $ul = this.$ul;
         var $li = this.$li;
-
-
 
         this._liWidth = $li.width() ? $li.width() : opts.wrapWidth;
         this._liHeight = $li.height();
@@ -6553,7 +6545,7 @@ $.widget('blend.slider', {
                 // 手指触摸上一屏滚动
                 if (that.moveDistance > _touchDistance) {
                     that._fnMovePrev();
-                // 手指触摸下一屏滚动
+                    // 手指触摸下一屏滚动
                 }
                 else if (that.moveDistance < -_touchDistance) {
                     that._fnMoveNext();
@@ -6677,12 +6669,12 @@ $.widget('blend.slider', {
         this._index ++;
         this._fnMove();
         /*if(opts.lazyLoad){
-            if(opts.continuousScroll){
-                fnLazyLoad(_index+2);
-            }else{
-                fnLazyLoad(_index+1);
-            }
-        }*/
+         if(opts.continuousScroll){
+         fnLazyLoad(_index+2);
+         }else{
+         fnLazyLoad(_index+1);
+         }
+         }*/
     },
     /**
      * 上一屏滚动
@@ -6693,16 +6685,16 @@ $.widget('blend.slider', {
         this._fnMove();
         // 第一次往右滚动懒加载图片
         /*if(firstMovePrev && opts.lazyLoad){
-            var i = _liLength-1;
-            for(i; i <= (_liLength+1); i++){
-                fnLazyLoad(i);
-            }
-            firstMovePrev = false;
-            return;
-        }
-        if(!firstMovePrev && opts.lazyLoad){
-            fnLazyLoad(_index);
-        }*/
+         var i = _liLength-1;
+         for(i; i <= (_liLength+1); i++){
+         fnLazyLoad(i);
+         }
+         firstMovePrev = false;
+         return;
+         }
+         if(!firstMovePrev && opts.lazyLoad){
+         fnLazyLoad(_index);
+         }*/
     },
     /**
      * 自动滑动
@@ -6811,22 +6803,22 @@ $.widget('blend.slider', {
      * 屏幕旋转后的处理函数
      */
     _spin: function () {
-      var that = this;
-      var $ul = this.$ul;
-      var $li = this.$li;
-      var options = this.options;
+        var that = this;
+        var $ul = this.$ul;
+        var $li = this.$li;
+        var options = this.options;
 
-      this.paused();
-      var widthOrHeight = options.axisX ? this._liWidth : this._liHeight;
-      this._fnTranslate($ul.children().first(), widthOrHeight * -1);
-      this._fnTranslate($ul.children().last(), widthOrHeight * that._liLength);
+        this.paused();
+        var widthOrHeight = options.axisX ? this._liWidth : this._liHeight;
+        this._fnTranslate($ul.children().first(), widthOrHeight * -1);
+        this._fnTranslate($ul.children().last(), widthOrHeight * that._liLength);
 
-      // 给初始图片定位
-      $li.each(function (i) {
-          that._fnTranslate($(this), (options.axisX ? that._liWidth : that._liHeight) * i);
-      });
-      this.start();
-      this.next();
+        // 给初始图片定位
+        $li.each(function (i) {
+            that._fnTranslate($(this), (options.axisX ? that._liWidth : that._liHeight) * i);
+        });
+        this.start();
+        this.next();
     },
     /**
      * 下一张幻灯片
@@ -6860,6 +6852,92 @@ $.widget('blend.slider', {
 
 });
 })(Zepto)
+;(function($){function _renderItem(el, dataIndex) {
+    var item;
+    var me = this;
+    var len = this.data.length;
+
+    var insertImg = function insertImg() {
+        var simg = 'src="' + item.content + '"';
+
+        if (item.width / item.height > me.ratio) {
+            simg += ' height="100%"';
+        }
+        else {
+            simg += ' width="100%"';
+        }
+
+        el.innerHTML = '<img ' + simg + ' />';
+    };
+
+    el.innerHTML = '';
+    el.style.background = '';
+
+    if (!this.isLooping && this.data[dataIndex] === null) {
+        return;
+    }
+    else {
+        dataIndex = (dataIndex + len) % len;
+        item = this.data[dataIndex];
+    }
+
+    el.className = 'blend-slider-pic';
+
+    if (item.loaded) {
+        insertImg();
+    }
+    else {
+        var currentImage = new Image();
+        currentImage.src = item.src;
+        currentImage.onload = function () {
+            item.width = currentImage.width;
+            item.height = currentImage.height;
+            insertImg();
+            item.loaded = true;
+        };
+    }
+}
+
+function _changStyles () {
+    var sliderStyles = ['blend-slider-prev', 'blend-slider-active', 'blend-slider-next'];
+    this.els.forEach(function (item, index) {
+        removeClass(item, sliderStyles.join('|'));
+        addClass(item, sliderStyles[index]);
+    });
+}
+
+function removeClass (el, cls) {
+    if (hasClass(el, cls)) {
+        el.className = el.className.replace(new RegExp('(\\s|^)(' + cls + ')(\\s|$)'), '$3');
+    }
+}
+
+function addClass (el, cls) {
+    if (!hasClass(el, cls)) {
+        el.className += ' ' + cls;
+    }
+}
+
+function hasClass (el, cls) {
+    return el.className.match(new RegExp('(\\s|^)(' + cls + ')(\\s|$)'));
+}
+
+function unblock() {
+    return !this._locking;
+}
+
+function slideTo(dataIndex, opts) {
+    if (this.isAutoPlay) {
+        this.pause();
+    }
+
+    if (this._locking) {
+        return;
+    }
+
+    this.unblock();
+
+}})(Zepto)
 ;(function($){/* globals NAMESPACE */
 /* eslint-disable fecs-camelcase */
 /**

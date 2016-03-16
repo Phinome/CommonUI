@@ -112,6 +112,7 @@
   }
 
   &.@{namespace}button-icon {
+    font-size: 15px;
     i:before {
       .font(@font-check);
     }
@@ -207,9 +208,27 @@
   height: 48px;
   background-color: #fff;
   padding: 0 15px;
-  .@{namespace}button {
+
+  .@{namespace}button,
+  .@{namespace}button-dotted {
     flex: 1;
     margin: auto 5px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      -webkit-box-shadow: none;
+              box-shadow: none;
+    }
+  }
+  .@{namespace}button-dotted {
+    border-right: 2px dotted #cecece;
+    background-color: #fff;
+
+    &:last-child {
+      border-right: none;
+    }
   }
 }
 

@@ -13,7 +13,8 @@ var less = require('gulp-less');
 var image = require('gulp-image');
 // var revCollector = require('gulp-rev-collector');
 var gulpReplace = require('gulp-replace');
-
+var LessPluginAutoPrefix = require('less-plugin-autoprefix');
+var autoprefix = new LessPluginAutoPrefix({browsers: ["last 2 versions"]});
 
 var CONFIG;
 
@@ -174,7 +175,9 @@ gulp.task("build:css", function () {
 
     gulp
         .src(CONFIG.LESS_FILE)
-        .pipe(less())
+        .pipe(less({
+            plugins: [autoprefix]
+        }))
         .pipe(rename({
             basename: lessFileName
         }))
