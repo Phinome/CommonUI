@@ -14,7 +14,6 @@
   padding: 0 2px;
   vertical-align: baseline;
   font-size: 10px;
-  line-height: 12px;
   white-space: nowrap;
   text-align: center;
   border: solid 1px transparent;
@@ -22,8 +21,9 @@
 
   &.@{namespace}badge-empty {
     padding: 0 9px;
-    background-color: transparent;
     color: @badge-default;
+    border-color: @badge-default;
+    background-color: transparent;
   }
   &.@{namespace}badge-large {
     height: 18px;
@@ -31,12 +31,19 @@
   }
 }
 
+.@{namespace}badge-radius {
+  border-radius: 2px;
+}
+
 .@{namespace}badge-default {
   color: #fff;
+  border-color: @badge-default;
   background-color: @badge-default;
 }
 
 .@{namespace}badge-primary {
+  color: @badge-color;
+  border-color: @badge-primary;
   background-color: @badge-primary;
   &.@{namespace}badge-empty {
     color: @badge-primary;
@@ -44,6 +51,8 @@
 }
 
 .@{namespace}badge-secondary {
+  color: @badge-color;
+  border-color: @badge-secondary;
   background-color: @badge-secondary;
   &.@{namespace}badge-empty {
     color: @badge-secondary;
@@ -51,6 +60,8 @@
 }
 
 .@{namespace}badge-success {
+  color: @badge-color;
+  border-color: @badge-success;
   background-color: @badge-success;
   &.@{namespace}badge-empty {
     color: @badge-success;
@@ -58,6 +69,8 @@
 }
 
 .@{namespace}badge-info {
+  color: @badge-color;
+  border-color: @badge-info;
   background-color: @badge-info;
   &.@{namespace}badge-empty {
     color: @badge-info;
@@ -65,6 +78,8 @@
 }
 
 .@{namespace}badge-warning {
+  color: @badge-color;
+  border-color: @badge-warning;
   background-color: @badge-warning;
   &.@{namespace}badge-empty {
     color: @badge-warning;
@@ -72,6 +87,8 @@
 }
 
 .@{namespace}badge-danger {
+  color: @badge-color;
+  border-color: @badge-danger;
   background-color: @badge-danger;
   &.@{namespace}badge-empty {
     color: @badge-danger;
@@ -112,4 +129,16 @@
   background-color: #f50;
   z-index: 100;
   box-shadow: 0 0 0 1px #fff;
+}
+
+.@{namespace}badge-sale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 78px;
+  line-height: 14px;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #f43b3b;
+  transform: translate(-20px, 15px) rotate(-45deg);
 }

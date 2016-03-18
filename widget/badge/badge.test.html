@@ -3,12 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>标签</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="stylesheet" href="../../dist/boost.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        .container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            background-color: #eed9d9;
+        }
+    </style>
 </head>
-
 
 <body>
 
@@ -39,12 +47,19 @@
     <br />
     <br />
 
-    <button class="blend-button blend-button-primary blend-button-icon" style="position:relative">
-        <em>红点微标</em>
+    <button class="blend-button blend-button-primary" style="position:relative">
+        <span>红点微标</span>
         <sup class="blend-badge-reddot">136</sup>
     </button>
 
 
+    <h3>圆角的标签</h3>
+    <div>
+        <span class="blend-badge blend-badge-primary blend-badge-radius">primary</span>
+    </div>
+
+    <br />
+    <br />
     <div>
         <span class="blend-badge">default</span>
         <span class="blend-badge blend-badge-primary">primary</span>
@@ -60,6 +75,12 @@
             <span style="width: 42px;height: 42px;border-radius: 6px;background: #eee;display: inline-block;"></span>
             <sup class="blend-badge-dot"></sup>
         </span>
+    </div>
+
+    <h3>斜角促销标签</h3>
+    <div class="container">
+        <span class="blend-badge blend-badge-sale">促销</span>
+
     </div>
 
     <script src="../../dist/boost.js"></script>
