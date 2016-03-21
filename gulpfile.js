@@ -242,7 +242,7 @@ gulp.task('build:md', function () {
 });
 
 gulp.task('build:samples', function () {
-    return gulp.src([CONFIG.WIDGET_DIR + '/**/*.html','!'+CONFIG.WIDGET_DIR + '/**/*.test*.html',])
+    return gulp.src([CONFIG.WIDGET_DIR + '/**/*.html','!'+CONFIG.WIDGET_DIR + '/**/*.test*.html'])
         .pipe(rename(function (path) {
             //path.basename = path.dirname.split('/')[0]+'_' + path.basename;
             if(path.basename==='button'){

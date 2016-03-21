@@ -1,7 +1,7 @@
 @formgroup-bottom-color: #EDEDED;
 @formgroup-background-color: #FFFFFF;
 @formgroup-font-color: #262626;
-@formgroup-placeholder-color: #999999;
+@formgroup-placeholder-color: #aaa;
 @active-border-color: #2eb6aa;
 @warning-border-color: #FFA000;
 @error-border-color: #E60D00;
@@ -12,6 +12,7 @@
 @formgroup-line-height: 40px;
 @formgroup-btn: @boost-font-size-nav;
 @formgroup-icon: "\e878";
+@placeholder-font-size: 14px;
 
 .@{namespace}form {
   border-top: 1px solid @formgroup-bottom-color;
@@ -40,6 +41,19 @@
   color: @formgroup-font-color;
 }
 
+input::-webkit-input-placeholder {
+  font-size: @placeholder-font-size;
+  color: @formgroup-placeholder-color;
+}
+input::-moz-placeholder {
+  font-size: @placeholder-font-size;
+  color: @formgroup-placeholder-color;
+}
+input:-ms-input-placeholder {
+  font-size: @placeholder-font-size;
+  color: @formgroup-placeholder-color;
+}
+
 .@{namespace}formgroup-input {
   display: block;
   flex: 1;
@@ -49,40 +63,28 @@
   font-size: @formgroup-label-font;
   border: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   color: @formgroup-font-color;
-  &::-webkit-input-placeholder {
-    color: @formgroup-placeholder-color;
-  }
-  &::-moz-placeholder {
-    color: @formgroup-placeholder-color;
-  }
-  &:-ms-input-placeholder {
-    color: @formgroup-placeholder-color;
+
+  &:focus {
+    padding-left: 7px;
+    padding-right: 7px;
   }
 }
 
 .@{namespace}formgroup-textarea {
   display: block;
   flex: 1;
+  padding: 10px;
   resize: none;
   outline: none;
   font-size: @formgroup-label-font;
   border: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   color: @formgroup-font-color;
-  &::-webkit-input-placeholder {
-    color: @formgroup-placeholder-color;
-  }
-  &::-moz-placeholder {
-    color: @formgroup-placeholder-color;
-  }
-  &:-ms-input-placeholder {
-    color: @formgroup-placeholder-color;
-  }
 }
 
 .@{namespace}formgroup-select {
@@ -95,8 +97,8 @@
   /*background: url("../images/select.png") right center no-repeat #FFF;*/
   border: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .@{namespace}formgroup-btn {
