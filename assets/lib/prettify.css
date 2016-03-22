@@ -1,0 +1,62 @@
+.prettyprint {
+    display: block;
+    font-family: Monaco,Consolas,"Lucida Console",monospace;
+    background-color: #f4f4f4;
+    font-size: 8px;
+    border: 0;
+    color: #e9e4e5;
+    line-height: 1.9em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 20px!important;
+    white-space: pre;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.prettyprint .pln {
+    color: #515151
+}
+
+.prettyprint .com {
+    color: #888
+}
+
+.prettyprint .pun,.prettyprint .opn,.prettyprint .clo {
+    color: #515151
+}
+
+.prettyprint .dec{
+    color: #eee;
+}
+
+.prettyprint .var {
+    color : #606;
+}
+
+.prettyprint .fun {
+    color: red
+}
+
+.prettyprint code {
+    font-family: Monaco,Consolas,"Lucida Console",monospace;
+    font-size: 13px;
+}
+
+.prettyprint .str,.prettyprint .lit,.prettyprint .atv {
+    color: #92a903;
+}
+
+.prettyprint .kwd,.prettyprint .tag {
+    color: #1e8b8b;
+}
+
+.prettyprint .typ,.prettyprint .atn {
+    color: #dc5232;
+}
