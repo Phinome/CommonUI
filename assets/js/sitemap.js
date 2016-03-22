@@ -6,7 +6,7 @@
 define('sitemap', ['jquery'], function ($) {
     function mainNav(path) {
         path = path || '';
-        var htmlItem = '<li><a href="{link}"><span class="{icon}"></span> {text}</a></li>';
+        var htmlItem = '<li class="blend-tabnav-item"><a href="{link}" class="blend-tabnav-item-text"><span class="{icon}"></span> <span>{text}</span></a></li>';
         var items = [
             {
                 link: 'help/start.html',
@@ -89,7 +89,7 @@ define('sitemap', ['jquery'], function ($) {
             var url = window.location.pathname;
             var filename = getQueryString('control');
             if (!filename) {
-                filename = 'Button';
+                filename = 'Badge';
             }
             $(id + ' a[href="?control=' + filename + '"]').parent().addClass('ui-nav-item-active');
         }
@@ -112,7 +112,7 @@ define('sitemap', ['jquery'], function ($) {
     function genBody(htmlReady) {
         var control = getQueryString('control');
         if (!control) {
-            control = 'Button';
+            control = 'Badge';
         }
         var url = '';
 

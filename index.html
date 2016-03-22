@@ -2,17 +2,17 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Commonui</title>
+    <title>通用移动组件</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/lib/normalize.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="assets/css/doc.css" media="screen">
     <link rel="stylesheet" type="text/css" href="assets/lib/prettify.css" media="screen" >
     <link rel="stylesheet" type="text/css" href="assets/lib/markdown.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="demo/common.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="demo/commonui.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/css/doc.css" media="screen">
   </head>
   <body>
   <div id="header">
-    <ul id="global-nav"></ul>
+    <ul id="global-nav" class="blend-tabnav"></ul>
   </div>
   <div class="blend-grid blend-container-fluid main-container">
     <div class="blend-row">
@@ -20,8 +20,12 @@
         <ul id="navigator"></ul>
       </div>
       <div class="blend-col-6" id="main"></div>
-      <div class="blend-col-4" id="phone">
-        <iframe src="./demo/widget/Button.html" frameborder="0"></iframe>
+      <div class="blend-col-3" id="phoneContainer">
+        <div class="device">
+          <div class="device-window">
+            <iframe src="./demo/widget/Badge.html" frameborder="0"></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>

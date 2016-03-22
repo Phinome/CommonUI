@@ -7,9 +7,9 @@
 body {
     margin: 0;
     font-size: 12px;
-    font-family: Microsoft YaHei, Helvetica, STHeiti STXihei, Microsoft JhengHei, Tohoma, Arial;
     -webkit-font-smoothing: antialiased;
     min-width: 1240px;
+    background: url('../imgs/doc-bg.png') 0 0;
 }
 img {
     border: 0;
@@ -1013,4 +1013,40 @@ a {
     margin-left: -90px;
     width: 180px;
     height: 218px;
+}
+
+[class*=blend-col] {
+    background-color: #fff;
+}
+
+.main-container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+#phoneContainer {
+    padding: 0;
+}
+
+.device {
+    position: relative;
+    top: 50px;
+    display: block;
+    width: 350px;
+    height: 813px;
+    background-image: url('../imgs/iPhone6.png');
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+
+.device-window {
+    position: absolute;
+    top: 84px;
+    left: 51px;
+}
+
+.device-window iframe {
+    width: 249px;
+    height: 437px;
+    border-radius: 5px;
 }
