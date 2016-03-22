@@ -23,7 +23,7 @@
       <div class="blend-col-3" id="phoneContainer">
         <div class="device">
           <div class="device-window">
-            <iframe src="./demo/widget/Badge.html" frameborder="0"></iframe>
+            <iframe src="./demo/widget/Badge.html" frameborder="0" id="xMode"></iframe>
           </div>
         </div>
       </div>
@@ -34,11 +34,12 @@
   <script src="assets/js/config.js"></script>
   <script src="assets/lib/prettify.min.js"></script>
   <script src="assets/js/sitemap.js"></script>
+  <script src="assets/js/doc.js"></script>
   <script src="demo/commonui.min.js"></script>
   <script>
-//    window.commonui = $.noConflict(true);
+    window.commonui = $.noConflict(true);
     require(['sitemap'], function (sitemap) {
-      sitemap.mainNav('../');
+      sitemap.mainNav('./');
       sitemap.footer();
       sitemap.renderNav();
       sitemap.renderBody(function () {

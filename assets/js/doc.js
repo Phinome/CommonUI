@@ -3,8 +3,7 @@
  * @author: longyue(longyue@baidu.com)
  * @Date: 3/21/16
  */
-define('doc', function (require) {
-    var $ = require(['jquery']);
+define(['jquery'], function ($) {
     function render() {
         $('.example').each(function (index, item) {
             var $tab = $('<div data-ui-type="Tab" data-ui-id="democode' + index

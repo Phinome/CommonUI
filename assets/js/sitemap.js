@@ -118,6 +118,8 @@ define('sitemap', ['jquery'], function ($) {
 
         url = './demo/widget/' + control + '.html';
 
+        $('#xMode').attr('src', url);
+
         $.ajax({
             method: 'GET',
             url: url,
