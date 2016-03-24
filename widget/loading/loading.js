@@ -5,8 +5,8 @@
  * @name loading
  * @author wangzhonghua
  * @date 2015.02.05
- * @memberof $.fn or $.blend
- * @grammar  $('.test').loading().show(),$.blend.loading().show()
+ * @memberof $.fn or $.cmu
+ * @grammar  $('.test').loading().show(),$.cmu.loading().show()
  * @desc 页面级loading
  * @param {Object} opts 组件配置（以下参数为配置项）
  * @param {String} opts.loadingClass (可选, 默认值:\'\') loading节点的className
@@ -14,21 +14,21 @@
  *
  * @example
  * 	1、$('.j_test_loading').loading(), $('.j_test_loading')为loading自定义节点,并不是容器,切记
- * 	2、var loading = $.blend.loading({
+ * 	2、var loading = $.cmu.loading({
  * 						loadingClass: 'my_define'
  * 					});
  * 		  loading.show();
- *  3、var loading = $.blend.loading({
+ *  3、var loading = $.cmu.loading({
  * 						loadingHtml: '<div class="my_define">loading...</div>'
  * 					});
  * 		  loading.show();
  */
 'use strict';
-$.widget('blend.loading', {
+$.widget('cmu.loading', {
 	/*配置项*/
     options: {
         loadingClass: '',
-        loadingImgClass:'blend-loading-default',
+        loadingImgClass:'cmu-loading-default',
         loadingHtml: '',
         loadingImg: '',
         loadingWord: '正在载入...'

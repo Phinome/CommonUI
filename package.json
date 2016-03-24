@@ -1,8 +1,8 @@
 {
-  "name": "boostui",
-  "version": "0.0.1",
-  "description": "a boost ui",
-  "main": "dist/boostui.js",
+  "name": "commonui",
+  "version": "1.0.0",
+  "description": "common mobile ui lib",
+  "main": "dist/cmu.js",
   "directories": {
     "doc": "docs"
   },
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Clouda-team/boostui.git"
+    "url": "git@github.com:Phinome/CommonUI.git"
   },
   "keywords": [
     "ui",
-    "clouda",
-    "boost"
+    "baidu",
+    "common"
   ],
-  "author": "Clouda team",
+  "author": "Phinome",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Clouda-team/boostui/issues"
+    "url": "https://github.com/phinome/CommonUI/issues"
   },
-  "homepage": "https://github.com/Clouda-team/boostui",
+  "homepage": "https://github.com/phinome/CommonUI",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "del": "~1.2.0",

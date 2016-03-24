@@ -1,23 +1,24 @@
 //
 // Close icons
 // --------------------------------------------------
-
-
-.close {
-  float: right;
-  font-size: (@font-size-base * 1.5);
+.@{namespace}close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  font-size: @icon-font-size;
   font-weight: @close-font-weight;
-  line-height: 1;
+  text-align: center;
   color: @close-color;
   text-shadow: @close-text-shadow;
-  .opacity(.2);
+  opacity: 0.2;
 
   &:hover,
   &:focus {
     color: @close-color;
     text-decoration: none;
     cursor: pointer;
-    .opacity(.5);
+    opacity: 0.5;
   }
 
   // Additional properties for button version
@@ -31,4 +32,9 @@
     border: 0;
     -webkit-appearance: none;
   }
+
+  &:after {
+    content: '\e676';
+  }
+
 }

@@ -7,8 +7,8 @@
  */
 
 'use strict';
-// var NAMESPACE = "blend-";
-$.widget('blend.gallery', {
+// var NAMESPACE = "cmu-";
+$.widget('cmu.gallery', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      * tapMode: true表示点击图片切换显示描述，false表示点击切换显示图集

@@ -3234,7 +3234,7 @@ var BLENDURL = 'http://cp01-rdqa04-dev111.cp01.baidu.com:8042/boost/test/blendui
  * @file address 组件
  */
 
-$.widget('blend.address', {
+$.widget('cmuaddress', {
     /**
      * 组件的默认选项
      */

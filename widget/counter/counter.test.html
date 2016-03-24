@@ -4,30 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>数量选择器</title>
-    <link rel="stylesheet" href="../../dist/boost.css">
+    <link rel="stylesheet" href="../../dist/cmu.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
 
-    <div data-blend-widget="counter" data-blend-counter='{"step":1,"maxValue":10}' class="blend-counter">
-        <div class="blend-counter-minus"></div>
-        <input class="blend-counter-input" type="text">
-        <div class="blend-counter-plus"></div>
+    <div data-cmu-widget="counter" data-cmu-counter='{"step":1,"maxValue":10}' class="cmu-counter">
+        <div class="cmu-counter-minus"></div>
+        <input class="cmu-counter-input" type="text">
+        <div class="cmu-counter-plus"></div>
     </div>
 
-    <div data-blend-widget="counter" data-blend-counter='{"step":2,"maxValue":10}' class="blend-counter" style="margin-top: 10px;">
-        <div class="blend-counter-minus"></div>
-        <input class="blend-counter-input" type="text">
-        <div class="blend-counter-plus"></div>
+    <div data-cmu-widget="counter" data-cmu-counter='{"step":2,"maxValue":10}' class="cmu-counter" style="margin-top: 10px;">
+        <div class="cmu-counter-minus"></div>
+        <input class="cmu-counter-input" type="text">
+        <div class="cmu-counter-plus"></div>
     </div>
 
-    <script src="../../dist/boost.js"></script>
+    <script src="../../dist/cmu.js"></script>
     <script>
 // var $ = $.;
         $(function () {
             // 选择元素
-            var $counter = $('[data-blend-widget="counter"]')
+            var $counter = $('[data-cmu-widget="counter"]')
 
             // 初始化, 已经由默认初始化
             //.counter({

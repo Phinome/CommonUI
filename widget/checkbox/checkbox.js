@@ -7,7 +7,7 @@
 
 'use strict';
 
-$.widget('blend.checkbox', {
+$.widget('cmu.checkbox', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */
@@ -112,7 +112,7 @@ $.widget('blend.checkbox', {
         var me = this;
 
         this.$group.on('click', function () {
-            if ($(this).hasClass('blend-checkbox-disabled')) {
+            if ($(this).hasClass('cmu-checkbox-disabled')) {
                 return false;
             }
             if (me._trigger('beforechecked', null, {})) {
@@ -121,7 +121,7 @@ $.widget('blend.checkbox', {
             }
         });
         this.$label.on('click', function () {
-            if ($(me.$group.eq([me.$label.index($(this))])).hasClass('blend-checkbox-disabled')) {
+            if ($(me.$group.eq([me.$label.index($(this))])).hasClass('cmu-checkbox-disabled')) {
                 return false;
             }
             if (me._trigger('beforechecked', null, {})) {
@@ -134,7 +134,7 @@ $.widget('blend.checkbox', {
         var me = this;
         if (me.options.disabled) {
             me._trigger('disabled', null, me);
-            me.$group.addClass('blend-checkbox-disabled');
+            me.$group.addClass('cmu-checkbox-disabled');
 
         }
     },
@@ -146,7 +146,7 @@ $.widget('blend.checkbox', {
         var me = this;
 
         if ('radio' === me.options.type) {
-            me.$group.addClass('blend-checkbox-disabled');
+            me.$group.addClass('cmu-checkbox-disabled');
         }
     },
     /**

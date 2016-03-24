@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>checkbox</title>
-    <link rel="stylesheet" href="../../dist/boost.css">
+    <link rel="stylesheet" href="../../dist/cmu.css">
     <style type="text/css">
         #checkgroup {
             border-bottom: 1px solid #edebeb;
@@ -37,79 +37,79 @@
 <body>
 
 <h2>button</h2>
-<div style="margin: 0 20px;" id="checkbutton" data-blend-widget="checkbox" data-blend-checkbox='{"type":"radio","values":["button1","button2"],"itemSelector":".blend-button","itemSelected":"blend-button-checkbox-checked"}'>
+<div style="margin: 0 20px;" id="checkbutton" data-cmu-widget="checkbox" data-cmu-checkbox='{"type":"radio","values":["button1","button2"],"itemSelector":".cmu-button","itemSelected":"cmu-button-checkbox-checked"}'>
 
-    <button class="blend-button blend-button-red blend-button-checkbox">nocheck</button>
-    <button class="blend-button blend-button-red blend-button-checkbox blend-button-checkbox-checked">checked</button>
+    <button class="cmu-button cmu-button-red cmu-button-checkbox">nocheck</button>
+    <button class="cmu-button cmu-button-red cmu-button-checkbox cmu-button-checkbox-checked">checked</button>
 
 </div>
 
 <div style="margin: 20px auto;background-color: #ccc;">
-    <div id="checkbox" data-blend-widget="checkbox" data-blend-checkbox='{"type": "radio", "values": ["radio1"]}'>
-        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">AA</label>
-        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">BB</label>
+    <div id="checkbox" data-cmu-widget="checkbox" data-cmu-checkbox='{"type": "radio", "values": ["radio1"]}'>
+        <span class="cmu-checkbox cmu-checkbox-default"></span><label class="cmu-checkbox-label">AA</label>
+        <span class="cmu-checkbox cmu-checkbox-default"></span><label class="cmu-checkbox-label">BB</label>
     </div>
 </div>
 
 <h2>group</h2>
 
-<div id="checkgroup" data-blend-widget="checkbox"
-     data-blend-checkbox='{"type":"radio","values":["radio1","radio2","radio3"]}'>
-    <div class="blend-checkbox-group">
-        <label class="blend-checkbox-label">就是这个原因了</label>
-        <span class="blend-checkbox blend-checkbox-dot blend-checkbox-checked"></span>
+<div id="checkgroup" data-cmu-widget="checkbox"
+     data-cmu-checkbox='{"type":"radio","values":["radio1","radio2","radio3"]}'>
+    <div class="cmu-checkbox-group">
+        <label class="cmu-checkbox-label">就是这个原因了</label>
+        <span class="cmu-checkbox cmu-checkbox-dot cmu-checkbox-checked"></span>
     </div>
-    <div class="blend-checkbox-group">
-        <label class="blend-checkbox-label">不是因为这个</label>
-        <span class="blend-checkbox blend-checkbox-dot"></span>
+    <div class="cmu-checkbox-group">
+        <label class="cmu-checkbox-label">不是因为这个</label>
+        <span class="cmu-checkbox cmu-checkbox-dot"></span>
     </div>
-    <div class="blend-checkbox-group">
-        <label class="blend-checkbox-label">让我再想一想</label>
-        <span class="blend-checkbox blend-checkbox-dot"></span>
+    <div class="cmu-checkbox-group">
+        <label class="cmu-checkbox-label">让我再想一想</label>
+        <span class="cmu-checkbox cmu-checkbox-dot"></span>
     </div>
 </div>
 
 <h2>带全选checkbox</h2>
 
-<div id="checkall" class="blend-checkbox-red" data-blend-widget="checkbox" data-blend-checkbox='{"type":"group", "disabled": true}'>
+<div id="checkall" class="cmu-checkbox-red" data-cmu-widget="checkbox" data-cmu-checkbox='{"type":"group", "disabled": true}'>
     <div>
-        <span class="blend-checkbox blend-checkbox-square blend-checkbox-all"></span><label
-            class="blend-checkbox-label">全选</label>
+        <span class="cmu-checkbox cmu-checkbox-square cmu-checkbox-all"></span><label
+            class="cmu-checkbox-label">全选</label>
     </div>
     <div>
-        <span class="blend-checkbox blend-checkbox-default blend-checkbox-checked"></span><label
-            class="blend-checkbox-label">A</label>
-        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">B</label>
-        <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">C</label>
+        <span class="cmu-checkbox cmu-checkbox-default cmu-checkbox-checked"></span><label
+            class="cmu-checkbox-label">A</label>
+        <span class="cmu-checkbox cmu-checkbox-default"></span><label class="cmu-checkbox-label">B</label>
+        <span class="cmu-checkbox cmu-checkbox-default"></span><label class="cmu-checkbox-label">C</label>
     </div>
     <div>
-        <span class="blend-checkbox blend-checkbox-square blend-checkbox-all"></span><label
-            class="blend-checkbox-label">全选</label>
+        <span class="cmu-checkbox cmu-checkbox-square cmu-checkbox-all"></span><label
+            class="cmu-checkbox-label">全选</label>
     </div>
 
 </div>
 
 <h2>方形checkbox</h2>
 
-<div id="check" data-blend-widget="checkbox" data-blend-checkbox='{"type":"group"}'>
-    <span class="item blend-checkbox blend-checkbox-square blend-checkbox-checked"></span><label
-        class="blend-checkbox-label">A</label>
-    <span class="item blend-checkbox blend-checkbox-square"></span><label class="blend-checkbox-label">B</label>
+<div id="check" data-cmu-widget="checkbox" data-cmu-checkbox='{"type":"group"}'>
+    <span class="item cmu-checkbox cmu-checkbox-square cmu-checkbox-checked"></span><label
+        class="cmu-checkbox-label">A</label>
+    <span class="item cmu-checkbox cmu-checkbox-square"></span><label class="cmu-checkbox-label">B</label>
 </div>
 
 <h2>radio</h2>
 
-<div id="radio" data-blend-widget="checkbox"
-     data-blend-checkbox='{"type":"radio","values":["radio1","radio2"]}'>
-    <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">AA</label>
-    <span class="blend-checkbox blend-checkbox-default"></span><label class="blend-checkbox-label">BB</label>
+<div id="radio" data-cmu-widget="checkbox"
+     data-cmu-checkbox='{"type":"radio","values":["radio1","radio2"]}'>
+    <span class="cmu-checkbox cmu-checkbox-default"></span><label class="cmu-checkbox-label">AA</label>
+    <span class="cmu-checkbox cmu-checkbox-default"></span><label class="cmu-checkbox-label">BB</label>
 </div>
 
 
 
-<script src="../../dist/boost.js"></script>
+<script src="../../dist/cmu.js"></script>
 <script type="text/javascript">
-    window.boost = $.noConflict(true);
+    window.cmu = $.noConflict(true);
 </script>
 </body>
 

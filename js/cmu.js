@@ -1,5 +1,5 @@
 (function(window, undefined) {
-    var NAMESPACE = "blend-" ;
+    var NAMESPACE = "cmu-" ;
     /**
  * @file uix.js
  * @author zhangyuanwei
@@ -3295,12 +3295,12 @@ var BLENDURL = 'http://cp01-rdqa04-dev111.cp01.baidu.com:8042/boost/test/blendui
  * @file address 组件
  */
 
-$.widget('blend.address', {
+$.widget('cmu.address', {
     /**
      * 组件的默认选项
      */
     options: {
-        btnClass: NAMESPACE + 'address-btn'
+        btnClass: NAMESPACE + 'cmu-btn'
     },
     /**
      * _create 创建组件时调用一次
@@ -3338,7 +3338,7 @@ $.widget('blend.address', {
 
 'use strict';
 
-$.widget('blend.checkbox', {
+$.widget('cmu.checkbox', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */
@@ -3443,7 +3443,7 @@ $.widget('blend.checkbox', {
         var me = this;
 
         this.$group.on('click', function () {
-            if ($(this).hasClass('blend-checkbox-disabled')) {
+            if ($(this).hasClass('cmu-checkbox-disabled')) {
                 return false;
             }
             if (me._trigger('beforechecked', null, {})) {
@@ -3452,7 +3452,7 @@ $.widget('blend.checkbox', {
             }
         });
         this.$label.on('click', function () {
-            if ($(me.$group.eq([me.$label.index($(this))])).hasClass('blend-checkbox-disabled')) {
+            if ($(me.$group.eq([me.$label.index($(this))])).hasClass('cmu-checkbox-disabled')) {
                 return false;
             }
             if (me._trigger('beforechecked', null, {})) {
@@ -3465,7 +3465,7 @@ $.widget('blend.checkbox', {
         var me = this;
         if (me.options.disabled) {
             me._trigger('disabled', null, me);
-            me.$group.addClass('blend-checkbox-disabled');
+            me.$group.addClass('cmu-checkbox-disabled');
 
         }
     },
@@ -3477,7 +3477,7 @@ $.widget('blend.checkbox', {
         var me = this;
 
         if ('radio' === me.options.type) {
-            me.$group.addClass('blend-checkbox-disabled');
+            me.$group.addClass('cmu-checkbox-disabled');
         }
     },
     /**
@@ -3511,7 +3511,7 @@ $.widget('blend.checkbox', {
  * @author zhangyuanwei
  */
 'use strict';
-$.widget('blend.counter', {
+$.widget('cmu.counter', {
 
     /**
      * 组件的默认选项，可以由多从覆盖关系
@@ -3729,7 +3729,7 @@ $.widget('blend.counter', {
  * 		  dialog.show();
  */
 'use strict';
-$.widget('blend.dialog', {
+$.widget('cmu.dialog', {
     /*配置项*/
     options: {
         id: null,
@@ -4069,7 +4069,7 @@ $.widget('blend.dialog', {
  * 	$.boost.fixedBar()
  */
 'use strict';
-$.widget('blend.fixedBar', {
+$.widget('cmu.fixedBar', {
     /**
      * 初始化组件
      * @private
@@ -4088,7 +4088,7 @@ $.widget('blend.fixedBar', {
  * @author wanghongliang02
  */
 
-$.widget('blend.formgroup', {
+$.widget('cmu.formgroup', {
     /**
      * 组件的默认选项
      */
@@ -4096,6 +4096,7 @@ $.widget('blend.formgroup', {
         labelClass: NAMESPACE + 'formgroup-label',
         itemClass: NAMESPACE + 'formgroup-item',
         // selectClass: NAMESPACE + 'formgroup-select',
+        controlIconClass: NAMESPACE + 'control-icons',
         btnClass: NAMESPACE + 'formgroup-btn',
         errorClass: NAMESPACE + 'formgroup-error',
         autoHeight: false,
@@ -4143,6 +4144,7 @@ $.widget('blend.formgroup', {
         var formgroup = this;
         var $el = formgroup.element;
         formgroup.$inputItem = $el.find('.' + formgroup.options.itemClass);
+        formgroup.$iconItem = $el.find('.' + formgroup.options.controlIconClass);
         if (formgroup.options.validate && formgroup.events) {
             formgroup._initEvent();
         }
@@ -4155,8 +4157,8 @@ $.widget('blend.formgroup', {
         var formgroup = this;
 
         formgroup.$inputItem.on('focus.formgroup', function (e) {
-            var $me = $(this);
             formgroup._removeError();
+            formgroup.$iconItem.show();
         });
         formgroup.$inputItem.on(formgroup.events + '.formgroup', function (e) {
             var $me = $(this);
@@ -4164,7 +4166,11 @@ $.widget('blend.formgroup', {
             if (formgroup.options.validate) {
                 formgroup._validate(value, $me);
             }
+            if (value === '') {
+                formgroup.$iconItem.hide();
+            }
         });
+
         if (formgroup.options.autoHeight) {
             $(formgroup.element).find('textarea').on('input click keyup paste', function (e) {
                 var ele = e.target;
@@ -4194,7 +4200,7 @@ $.widget('blend.formgroup', {
      */
     _removeError: function () {
         var formgroup = this;
-        formgroup.element.find('.blend-formgroup-item').removeClass(formgroup.options.errorClass);
+        formgroup.element.find('.cmu-formgroup-item').removeClass(formgroup.options.errorClass);
     },
     /**
      * show error
@@ -4203,7 +4209,7 @@ $.widget('blend.formgroup', {
      */
     _showError: function (msg) {
         var formgroup = this;
-        formgroup.element.find('.blend-formgroup-item').addClass(formgroup.options.errorClass);
+        formgroup.element.find('.cmu-formgroup-item').addClass(formgroup.options.errorClass);
         // TODO error tip
         var toast = $[NAMESPACE.substr(0, NAMESPACE.length - 1)].toast();
         toast.show(msg, 1000);
@@ -4275,8 +4281,8 @@ $.widget('blend.formgroup', {
  */
 
 'use strict';
-// var NAMESPACE = "blend-";
-$.widget('blend.gallery', {
+// var NAMESPACE = "cmu-";
+$.widget('cmu.gallery', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      * tapMode: true表示点击图片切换显示描述，false表示点击切换显示图集
@@ -5466,7 +5472,7 @@ $.widget('blend.gallery', {
  */
 
 
-$.widget('blend.header', {
+$.widget('cmu.header', {
     options: {
         leftSelector: '.' + NAMESPACE + 'header-left',
         rightSelector: '.' + NAMESPACE + 'header-right',
@@ -5559,7 +5565,7 @@ function __genItemIterator(cb) {
  * @file imglist.js
  */
 'use strict';
-$.widget('blend.imglist', {
+$.widget('cmu.imglist', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */
@@ -5615,7 +5621,7 @@ $.widget('blend.imglist', {
  * @author wanghongliang02
  */
 
-$.widget('blend.list', {
+$.widget('cmu.list', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */
@@ -5830,8 +5836,8 @@ $.widget('blend.list', {
  * @name loading
  * @author wangzhonghua
  * @date 2015.02.05
- * @memberof $.fn or $.blend
- * @grammar  $('.test').loading().show(),$.blend.loading().show()
+ * @memberof $.fn or $.cmu
+ * @grammar  $('.test').loading().show(),$.cmu.loading().show()
  * @desc 页面级loading
  * @param {Object} opts 组件配置（以下参数为配置项）
  * @param {String} opts.loadingClass (可选, 默认值:\'\') loading节点的className
@@ -5839,21 +5845,21 @@ $.widget('blend.list', {
  *
  * @example
  * 	1、$('.j_test_loading').loading(), $('.j_test_loading')为loading自定义节点,并不是容器,切记
- * 	2、var loading = $.blend.loading({
+ * 	2、var loading = $.cmu.loading({
  * 						loadingClass: 'my_define'
  * 					});
  * 		  loading.show();
- *  3、var loading = $.blend.loading({
+ *  3、var loading = $.cmu.loading({
  * 						loadingHtml: '<div class="my_define">loading...</div>'
  * 					});
  * 		  loading.show();
  */
 'use strict';
-$.widget('blend.loading', {
+$.widget('cmu.loading', {
 	/*配置项*/
     options: {
         loadingClass: '',
-        loadingImgClass:'blend-loading-default',
+        loadingImgClass:'cmu-loading-default',
         loadingHtml: '',
         loadingImg: '',
         loadingWord: '正在载入...'
@@ -5922,7 +5928,7 @@ $.widget('blend.loading', {
  * @author wanghongliang02
  */
 
-$.widget('blend.nav', {
+$.widget('cmu.nav', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */
@@ -6097,7 +6103,7 @@ $.widget('blend.nav', {
         /**
          * 处理column范围
          */
-        var columnNum = ($el[0].className).match(/blend\-nav\-column\-(\d{1})/);
+        var columnNum = ($el[0].className).match(/cmu\-nav\-column\-(\d{1})/);
         
         if (columnNum){
             nav.options.column = parseInt(columnNum[1], 10);
@@ -6216,7 +6222,7 @@ $.widget('blend.nav', {
  * @file sidenav.js
  * @author dingquan
  */
-$.widget('blend.sidenav', {
+$.widget('cmu.sidenav', {
 
     options: {
         limit: 44,
@@ -6242,8 +6248,8 @@ $.widget('blend.sidenav', {
         this.limit = opts.limit;
         this.type = opts.type;
 
-        this.navs = this.$el.find('.blend-sidenav-nav li');
-        this.contents = this.$el.find('.blend-sidenav-content .blend-sidenav-item');
+        this.navs = this.$el.find('.cmu-sidenav-nav li');
+        this.contents = this.$el.find('.cmu-sidenav-content .cmu-sidenav-item');
 
         this._initSidePosition();   // 初始化side位置
         this._initContent();    // 初始化右侧内容
@@ -6258,7 +6264,7 @@ $.widget('blend.sidenav', {
         var doc = document;
         var originScrollTop = doc.documentElement.scrollTop || doc.body.scrollTop;
         if (originScrollTop > 0) {
-            this.$el.find('.blend-sidenav-nav').css('top', 0);
+            this.$el.find('.cmu-sidenav-nav').css('top', 0);
         }
     },
     /**
@@ -6270,7 +6276,7 @@ $.widget('blend.sidenav', {
         var nav;
         for (var i = 0, len = this.navs.length; i < len; i++) {
             nav = this.navs.eq(i);
-            if (nav.hasClass('blend-sidenav-active')) {
+            if (nav.hasClass('cmu-sidenav-active')) {
                 activeIndex = i;
             }
             // 建立导航和内容的对应关系
@@ -6279,7 +6285,7 @@ $.widget('blend.sidenav', {
         }
         if (!activeIndex) {
             activeIndex = 0;
-            this.navs.eq(0).addClass('blend-sidenav-active');
+            this.navs.eq(0).addClass('cmu-sidenav-active');
         }
         if (this.type === 1) {
             this.contents.show();
@@ -6296,21 +6302,21 @@ $.widget('blend.sidenav', {
     _bindEvent: function () {
         var doc = document;
         var me = this;
-        var $side = this.$el.find('.blend-sidenav-nav');
+        var $side = this.$el.find('.cmu-sidenav-nav');
         var flag = false;
         
-        var $nav = this.$el.find('.blend-sidenav-nav ul');
+        var $nav = this.$el.find('.cmu-sidenav-nav ul');
         $nav.on('click', function (e) {
             e.preventDefault();
-            $nav.find('li').removeClass('blend-sidenav-active');
+            $nav.find('li').removeClass('cmu-sidenav-active');
             var target = e.target || e.srcElement;
             var nodeName = target.nodeName.toLowerCase();
-            var blendId;
+            var cmuId;
             if (nodeName === 'li') {
-                blendId = $(target).data(me.navId);
-                $(target).addClass('blend-sidenav-active');
+                cmuId = $(target).data(me.navId);
+                $(target).addClass('cmu-sidenav-active');
                 me.contents.hide();
-                me.contents.eq(blendId).show();
+                me.contents.eq(cmuId).show();
             }
         });
     }
@@ -6944,7 +6950,7 @@ function slideTo(dataIndex, opts) {
  * @file suggest 组件
  */
 
-$.widget('blend.suggest', {
+$.widget('cmu.suggest', {
     /**
      * 组件的默认选项
      */
@@ -7047,14 +7053,14 @@ $.widget('blend.suggest', {
  * @param {String} options.maskTapClose (可选, 默认值: false) mask被点击后是否关闭dialog
  * @example
  *  1、$('.suspend').suspend(), $('.suspend')为dialog自定义节点,并不是dialog的容器,切记
- *  2、var suspend = $.blend.suspend({
+ *  2、var suspend = $.cmu.suspend({
  *                      addCSSClass: '',
  *                      maskTapClose: true,
  *                  });
  *        suspend.show();
  */
 'use strict';
-$.widget('blend.suspend', {
+$.widget('cmu.suspend', {
     /*配置项*/
     options: {
         maskTapClose: true,    // 点击mask，关闭suspend
@@ -7250,7 +7256,7 @@ $.widget('blend.suspend', {
  * @file switch.js
  * @author haoxin02
  */
-$.widget('blend.switch', {
+$.widget('cmu.switch', {
 
     options: {
         itemSwitch: '.' + NAMESPACE + 'switch',
@@ -7301,7 +7307,7 @@ $.widget('blend.switch', {
  * @author wanghongliang02
  */
 
-$.widget('blend.tab', {
+$.widget('cmu.tab', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */
@@ -7370,8 +7376,8 @@ $.widget('blend.tab', {
             this._uix.destroy();
         }
         $.dynamicLoad (function() {
-            require(['src/blend'], function (blend) {
-                me._uix = me._initUIXComponent(blend);
+            require(['src/cmu'], function (cmu) {
+                me._uix = me._initUIXComponent(cmu);
             });
         });
     },
@@ -7379,13 +7385,13 @@ $.widget('blend.tab', {
      * 创建UIX的实例
      * @private
      */
-     _initUIXComponent : function (blend) {
+     _initUIXComponent : function (cmu) {
         var uixTab,
             me = this, 
             $el = this.element,
             $tabItem = $el.find(this._itemSelector);
             /*创建一个UIXtab*/
-            uixTab = blend.create('tab', {
+            uixTab = cmu.create('tab', {
                  "id": "tab",
                  "items":[]
             });
@@ -7402,7 +7408,7 @@ $.widget('blend.tab', {
     _generateItem : function (callback, uixTab) {
         return function (index, _item) {
             var $item = $(_item),
-                blendItem,
+                cmuItem,
                 itemConf ={
                     text : $item.text(),
                     href : $item.data('href')
@@ -7517,7 +7523,7 @@ $.widget('blend.tab', {
  * @date 2015.02.05
  */
 'use strict';
-$.widget('blend.toast', {
+$.widget('cmu.toast', {
     /*配置项*/
     options: {
         toastClass: '',
@@ -7602,7 +7608,7 @@ $.widget('blend.toast', {
  * @author dingquan@baidu.com
  */
 
-$.widget('blend.topnav', {
+$.widget('cmu.topnav', {
     /**
      * 配置信息
      */
@@ -7709,9 +7715,9 @@ $.widget('blend.topnav', {
 ;(function ($) {
     // TODO 判断UA环境,给body增加class
     $(function () {
-        $('[data-blend-widget]').each(function (i, elem) {
+        $('[data-cmu-widget]').each(function (i, elem) {
             var $elem = $(elem);
-            var widgetAttr = $elem.data('blend-widget');
+            var widgetAttr = $elem.data('cmu-widget');
             var widgetNames = widgetAttr.split(',');
             var widgetNameLen = widgetNames.length;
             var index;
@@ -7723,7 +7729,7 @@ $.widget('blend.topnav', {
                 }
                 else {
                     // TODO error report
-                    throw new Error('Unknow blend widget \"' + name + '\"');
+                    throw new Error('Unknow cmu widget \"' + name + '\"');
                     // console.error('Unknow blend widget \"' + name + '\"');
                 }
             }

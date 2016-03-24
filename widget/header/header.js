@@ -14,7 +14,7 @@
  */
 
 
-$.widget('blend.header', {
+$.widget('cmu.header', {
     options: {
         leftSelector: '.' + NAMESPACE + 'header-left',
         rightSelector: '.' + NAMESPACE + 'header-right',

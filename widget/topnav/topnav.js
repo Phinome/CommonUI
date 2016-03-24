@@ -6,7 +6,7 @@
  * @author dingquan@baidu.com
  */
 
-$.widget('blend.topnav', {
+$.widget('cmu.topnav', {
     /**
      * 配置信息
      */

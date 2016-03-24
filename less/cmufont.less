@@ -1,0 +1,22 @@
+@font-face {font-family: "cmufont";
+  src: url('cmufont.eot?t=1458727272'); /* IE9*/
+  src: url('cmufont.eot?t=1458727272#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('cmufont.woff?t=1458727272') format('woff'), /* chrome, firefox */
+  url('cmufont.ttf?t=1458727272') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('cmufont.svg?t=1458727272#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+
+@font-left: "\e600";
+@font-right: "\e604";
+@font-check: "\e601";
+@font-plus: "\e602";
+@font-minus: "\e603";
+
+
+.font(@style) {
+  font-family: "cmufont" !important;
+  font-style: normal;
+  content: @style;
+}
+

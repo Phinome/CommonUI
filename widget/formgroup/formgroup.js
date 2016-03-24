@@ -5,7 +5,7 @@
  * @author wanghongliang02
  */
 
-$.widget('blend.formgroup', {
+$.widget('cmu.formgroup', {
     /**
      * 组件的默认选项
      */
@@ -13,6 +13,7 @@ $.widget('blend.formgroup', {
         labelClass: NAMESPACE + 'formgroup-label',
         itemClass: NAMESPACE + 'formgroup-item',
         // selectClass: NAMESPACE + 'formgroup-select',
+        controlIconClass: NAMESPACE + 'control-icons',
         btnClass: NAMESPACE + 'formgroup-btn',
         errorClass: NAMESPACE + 'formgroup-error',
         autoHeight: false,
@@ -60,6 +61,7 @@ $.widget('blend.formgroup', {
         var formgroup = this;
         var $el = formgroup.element;
         formgroup.$inputItem = $el.find('.' + formgroup.options.itemClass);
+        formgroup.$iconItem = $el.find('.' + formgroup.options.controlIconClass);
         if (formgroup.options.validate && formgroup.events) {
             formgroup._initEvent();
         }
@@ -72,8 +74,8 @@ $.widget('blend.formgroup', {
         var formgroup = this;
 
         formgroup.$inputItem.on('focus.formgroup', function (e) {
-            var $me = $(this);
             formgroup._removeError();
+            formgroup.$iconItem.show();
         });
         formgroup.$inputItem.on(formgroup.events + '.formgroup', function (e) {
             var $me = $(this);
@@ -81,7 +83,11 @@ $.widget('blend.formgroup', {
             if (formgroup.options.validate) {
                 formgroup._validate(value, $me);
             }
+            if (value === '') {
+                formgroup.$iconItem.hide();
+            }
         });
+
         if (formgroup.options.autoHeight) {
             $(formgroup.element).find('textarea').on('input click keyup paste', function (e) {
                 var ele = e.target;
@@ -111,7 +117,7 @@ $.widget('blend.formgroup', {
      */
     _removeError: function () {
         var formgroup = this;
-        formgroup.element.find('.blend-formgroup-item').removeClass(formgroup.options.errorClass);
+        formgroup.element.find('.cmu-formgroup-item').removeClass(formgroup.options.errorClass);
     },
     /**
      * show error
@@ -120,7 +126,7 @@ $.widget('blend.formgroup', {
      */
     _showError: function (msg) {
         var formgroup = this;
-        formgroup.element.find('.blend-formgroup-item').addClass(formgroup.options.errorClass);
+        formgroup.element.find('.cmu-formgroup-item').addClass(formgroup.options.errorClass);
         // TODO error tip
         var toast = $[NAMESPACE.substr(0, NAMESPACE.length - 1)].toast();
         toast.show(msg, 1000);

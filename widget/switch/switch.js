@@ -6,7 +6,7 @@
  * @file switch.js
  * @author haoxin02
  */
-$.widget('blend.switch', {
+$.widget('cmu.switch', {
 
     options: {
         itemSwitch: '.' + NAMESPACE + 'switch',

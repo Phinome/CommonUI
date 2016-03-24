@@ -5,7 +5,7 @@
  * @author zhangyuanwei
  */
 'use strict';
-$.widget('blend.counter', {
+$.widget('cmu.counter', {
 
     /**
      * 组件的默认选项，可以由多从覆盖关系

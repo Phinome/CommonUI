@@ -6,9 +6,9 @@
 ;(function ($) {
     // TODO 判断UA环境,给body增加class
     $(function () {
-        $('[data-blend-widget]').each(function (i, elem) {
+        $('[data-cmu-widget]').each(function (i, elem) {
             var $elem = $(elem);
-            var widgetAttr = $elem.data('blend-widget');
+            var widgetAttr = $elem.data('cmu-widget');
             var widgetNames = widgetAttr.split(',');
             var widgetNameLen = widgetNames.length;
             var index;
@@ -20,7 +20,7 @@
                 }
                 else {
                     // TODO error report
-                    throw new Error('Unknow blend widget \"' + name + '\"');
+                    throw new Error('Unknow cmu widget \"' + name + '\"');
                     // console.error('Unknow blend widget \"' + name + '\"');
                 }
             }

@@ -6,7 +6,7 @@
  * @file sidenav.js
  * @author dingquan
  */
-$.widget('blend.sidenav', {
+$.widget('cmu.sidenav', {
 
     options: {
         limit: 44,
@@ -32,8 +32,8 @@ $.widget('blend.sidenav', {
         this.limit = opts.limit;
         this.type = opts.type;
 
-        this.navs = this.$el.find('.blend-sidenav-nav li');
-        this.contents = this.$el.find('.blend-sidenav-content .blend-sidenav-item');
+        this.navs = this.$el.find('.cmu-sidenav-nav li');
+        this.contents = this.$el.find('.cmu-sidenav-content .cmu-sidenav-item');
 
         this._initSidePosition();   // 初始化side位置
         this._initContent();    // 初始化右侧内容
@@ -48,7 +48,7 @@ $.widget('blend.sidenav', {
         var doc = document;
         var originScrollTop = doc.documentElement.scrollTop || doc.body.scrollTop;
         if (originScrollTop > 0) {
-            this.$el.find('.blend-sidenav-nav').css('top', 0);
+            this.$el.find('.cmu-sidenav-nav').css('top', 0);
         }
     },
     /**
@@ -60,7 +60,7 @@ $.widget('blend.sidenav', {
         var nav;
         for (var i = 0, len = this.navs.length; i < len; i++) {
             nav = this.navs.eq(i);
-            if (nav.hasClass('blend-sidenav-active')) {
+            if (nav.hasClass('cmu-sidenav-active')) {
                 activeIndex = i;
             }
             // 建立导航和内容的对应关系
@@ -69,7 +69,7 @@ $.widget('blend.sidenav', {
         }
         if (!activeIndex) {
             activeIndex = 0;
-            this.navs.eq(0).addClass('blend-sidenav-active');
+            this.navs.eq(0).addClass('cmu-sidenav-active');
         }
         if (this.type === 1) {
             this.contents.show();
@@ -86,21 +86,21 @@ $.widget('blend.sidenav', {
     _bindEvent: function () {
         var doc = document;
         var me = this;
-        var $side = this.$el.find('.blend-sidenav-nav');
+        var $side = this.$el.find('.cmu-sidenav-nav');
         var flag = false;
         
-        var $nav = this.$el.find('.blend-sidenav-nav ul');
+        var $nav = this.$el.find('.cmu-sidenav-nav ul');
         $nav.on('click', function (e) {
             e.preventDefault();
-            $nav.find('li').removeClass('blend-sidenav-active');
+            $nav.find('li').removeClass('cmu-sidenav-active');
             var target = e.target || e.srcElement;
             var nodeName = target.nodeName.toLowerCase();
-            var blendId;
+            var cmuId;
             if (nodeName === 'li') {
-                blendId = $(target).data(me.navId);
-                $(target).addClass('blend-sidenav-active');
+                cmuId = $(target).data(me.navId);
+                $(target).addClass('cmu-sidenav-active');
                 me.contents.hide();
-                me.contents.eq(blendId).show();
+                me.contents.eq(cmuId).show();
             }
         });
     }

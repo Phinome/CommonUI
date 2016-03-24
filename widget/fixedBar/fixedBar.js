@@ -7,7 +7,7 @@
  * 	$.boost.fixedBar()
  */
 'use strict';
-$.widget('blend.fixedBar', {
+$.widget('cmu.fixedBar', {
     /**
      * 初始化组件
      * @private

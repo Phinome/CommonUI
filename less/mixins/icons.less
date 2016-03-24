@@ -1,0 +1,41 @@
+// icons mixins
+// --------------------------------------------------
+.control-icons(@icon-font, @font-size: @icon-font-size, @color: @gray-base) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  font-family: "cmufont" !important;
+  font-style: normal;
+  font-size: @font-size;
+  font-weight: @close-font-weight;
+  text-align: center;
+  color: @color;
+  text-shadow: @close-text-shadow;
+  opacity: 0.2;
+
+  &:hover,
+  &:focus {
+    color: @color;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  // Additional properties for button version
+  // iOS requires the button element instead of an anchor tag.
+  // If you want the anchor version, it requires `href="#"`.
+  // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+  button& {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+  }
+
+  &:after {
+    content: @icon-font;
+  }
+
+}

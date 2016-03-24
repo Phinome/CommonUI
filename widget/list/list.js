@@ -5,7 +5,7 @@
  * @author wanghongliang02
  */
 
-$.widget('blend.list', {
+$.widget('cmu.list', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */

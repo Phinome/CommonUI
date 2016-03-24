@@ -7,9 +7,9 @@
     <title>dialog</title>
     <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <link rel="stylesheet" href="../../dist/boost.css">
+    <link rel="stylesheet" href="../../dist/cmu.css">
     <style type="text/css">
-    .blend-button{
+    .cmu-button{
       margin: 15px;
     }
     </style>
@@ -17,28 +17,28 @@
 
 <body>
 
-<header data-blend-widget="header" class="blend-header">
-    <span class="blend-header-left">
-        <a class="blend-header-item blend-action-back-icon" href="javascript:history.back();">&#xe600;</a>
+<header data-cmu-widget="header" class="cmu-header">
+    <span class="cmu-header-left">
+        <a class="cmu-header-item cmu-action-back-icon" href="javascript:history.back();">&#xe600;</a>
     </span>
-    <span class="blend-header-title">
-        <span class="blend-header-item">弹框</span>
+    <span class="cmu-header-title">
+        <span class="cmu-header-item">弹框</span>
     </span>
-    <span class="blend-header-right">
+    <span class="cmu-header-right">
     </span>
 </header>
 
   <div>
-      <button class="blend-button blend-button-primary" id="domInit">DOM渲染方式 提示弹框</button>
+      <button class="cmu-button cmu-button-primary" id="domInit">DOM渲染方式 提示弹框</button>
       <br/> 
-      <button class="blend-button blend-button-primary" id="jsInit">Js渲染方式 常规弹框</button>
+      <button class="cmu-button cmu-button-primary" id="jsInit">Js渲染方式 常规弹框</button>
       <br/> 
-      <button class="blend-button blend-button-primary"  id="custome">自定义dialog</button>
+      <button class="cmu-button cmu-button-primary"  id="custome">自定义dialog</button>
   </div>
   <br/>
   <textarea id="result"></textarea>
 
-    <div  id="customeDialog" class="blend-dialog">
+    <div  id="customeDialog" class="cmu-dialog">
 
       <h3>这是个h3标题</h3>
       <h4 style="color:red">这是个自定义的h4标题</h4>
@@ -46,22 +46,22 @@
       <p>因为是自定义的，所以没有绑定默认事件，可以点击mask关闭</p>
     </div>
 
-    <div  id="domInitDialog" class="blend-dialog">
+    <div  id="domInitDialog" class="cmu-dialog">
 
-      <div class="blend-dialog-body">
+      <div class="cmu-dialog-body">
         这是提示弹框
       </div>
-      <div class="blend-dialog-footer">
-        <a href="javascript:void(0);" class="blend-dialog-cancel">取消</a>
-        <a href="javascript:void(0);" class="blend-dialog-confirm">确认</a>
+      <div class="cmu-dialog-footer">
+        <a href="javascript:void(0);" class="cmu-dialog-cancel">取消</a>
+        <a href="javascript:void(0);" class="cmu-dialog-confirm">确认</a>
       </div>
     </div>
 
-    <div  id="jsInitDialog" class="blend-dialog">
+    <div  id="jsInitDialog" class="cmu-dialog">
     </div>
 
 
-    <script src="../../dist/boost.js"></script>
+    <script src="../../dist/cmu.js"></script>
 
     <script>
 
@@ -100,7 +100,7 @@
 
           var dialog3 = $("#jsInitDialog").dialog({
             title:"这是title",
-            content: '<p style="margin: 0;" class="blend-dialog-phone">13313331333</p><p style="margin: 0;"><a href="http://www.baidu.com" class="blend-dialog-link">这是一个链接</a></p>',
+            content: '<p style="margin: 0;" class="cmu-dialog-phone">13313331333</p><p style="margin: 0;"><a href="http://www.baidu.com" class="cmu-dialog-link">这是一个链接</a></p>',
             // cancelOnly: 1,
             confirmText:"确认",
             cancelText: '取消',

@@ -4,7 +4,7 @@
  * @file suggest 组件
  */
 
-$.widget('blend.suggest', {
+$.widget('cmu.suggest', {
     /**
      * 组件的默认选项
      */

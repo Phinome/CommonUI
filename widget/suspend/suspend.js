@@ -7,14 +7,14 @@
  * @param {String} options.maskTapClose (可选, 默认值: false) mask被点击后是否关闭dialog
  * @example
  *  1、$('.suspend').suspend(), $('.suspend')为dialog自定义节点,并不是dialog的容器,切记
- *  2、var suspend = $.blend.suspend({
+ *  2、var suspend = $.cmu.suspend({
  *                      addCSSClass: '',
  *                      maskTapClose: true,
  *                  });
  *        suspend.show();
  */
 'use strict';
-$.widget('blend.suspend', {
+$.widget('cmu.suspend', {
     /*配置项*/
     options: {
         maskTapClose: true,    // 点击mask，关闭suspend

@@ -154,3 +154,23 @@ input:-ms-input-placeholder {
     }
   }
 }
+
+.@{namespace}formgroup-control {
+  position: relative;
+
+  .@{namespace}close {
+    .control-icons('\e676');
+    display: none;
+    width: 32px;
+    height: @formgroup-height;
+    line-height: @formgroup-line-height;
+  }
+
+  .@{namespace}microphone {
+    .control-icons('\e6af');
+    display: none;
+    width: 32px;
+    height: @formgroup-height;
+    line-height: @formgroup-line-height;
+  }
+}

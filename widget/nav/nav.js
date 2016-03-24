@@ -5,7 +5,7 @@
  * @author wanghongliang02
  */
 
-$.widget('blend.nav', {
+$.widget('cmu.nav', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */
@@ -180,7 +180,7 @@ $.widget('blend.nav', {
         /**
          * 处理column范围
          */
-        var columnNum = ($el[0].className).match(/blend\-nav\-column\-(\d{1})/);
+        var columnNum = ($el[0].className).match(/cmu\-nav\-column\-(\d{1})/);
         
         if (columnNum){
             nav.options.column = parseInt(columnNum[1], 10);

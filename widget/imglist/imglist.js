@@ -5,7 +5,7 @@
  * @file imglist.js
  */
 'use strict';
-$.widget('blend.imglist', {
+$.widget('cmu.imglist', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */

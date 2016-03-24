@@ -7,8 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 
-    <link rel="stylesheet" href="../../dist/boost.css">
-    <link rel="stylesheet" href="/assets/blend2/css/samples.css">
+    <link rel="stylesheet" href="../../dist/cmu.css">
 
     <style type="text/css">
     body{
@@ -21,26 +20,23 @@
 
 <body>
 
-    <header data-blend-widget="header" class="blend-header">
-        <span class="blend-header-left">
-            <a class="blend-header-item blend-action-back-icon" href="javascript:history.back();">&#xe600;</a>
+    <header data-cmu-widget="header" class="cmu-header">
+        <span class="cmu-header-left">
+            <a class="cmu-header-item cmu-action-back-icon" href="javascript:history.back();">&#xe600;</a>
         </span>
-        <span class="blend-header-title">
-            <span class="blend-header-item">图集</span>
+        <span class="cmu-header-title">
+            <span class="cmu-header-item">图集</span>
         </span>
-        <span class="blend-header-right">
+        <span class="cmu-header-right">
         </span>
 </header>
     <br/>
 
-    <button class="blend-button blend-button-primary" id="pic">图片预览</button>
+    <button class="cmu-button cmu-button-primary" id="pic">图片预览</button>
 
-    <div id="gallery_wrapper"  class="blend-gallery" data-blend-gallery=''></div>
+    <div id="gallery_wrapper"  class="cmu-gallery" data-cmu-gallery=''></div>
 
-    <script src="../../dist/boost.js"></script>
-    <script type="text/javascript">
-        window.boost = $.noConflict(true);
-    </script>
+    <script src="../../dist/cmu.js"></script>
 
     <script type="text/javascript">
 
@@ -83,7 +79,7 @@
         }];
 
 
-        var wrapper = boost("#gallery_wrapper").gallery({
+        var wrapper = $("#gallery_wrapper").gallery({
             data:list,
             duration:2000,
             isLooping:true,
@@ -91,7 +87,7 @@
             isAutoplay:false //是否自动播放
         });
 
-        boost('#pic').on('click',function(){
+        $('#pic').on('click',function(){
             wrapper.gallery("show");
         });
 

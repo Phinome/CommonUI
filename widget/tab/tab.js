@@ -5,7 +5,7 @@
  * @author wanghongliang02
  */
 
-$.widget('blend.tab', {
+$.widget('cmu.tab', {
     /**
      * 组件的默认选项，可以由多重覆盖关系
      */
@@ -74,8 +74,8 @@ $.widget('blend.tab', {
             this._uix.destroy();
         }
         $.dynamicLoad (function() {
-            require(['src/blend'], function (blend) {
-                me._uix = me._initUIXComponent(blend);
+            require(['src/cmu'], function (cmu) {
+                me._uix = me._initUIXComponent(cmu);
             });
         });
     },
@@ -83,13 +83,13 @@ $.widget('blend.tab', {
      * 创建UIX的实例
      * @private
      */
-     _initUIXComponent : function (blend) {
+     _initUIXComponent : function (cmu) {
         var uixTab,
             me = this, 
             $el = this.element,
             $tabItem = $el.find(this._itemSelector);
             /*创建一个UIXtab*/
-            uixTab = blend.create('tab', {
+            uixTab = cmu.create('tab', {
                  "id": "tab",
                  "items":[]
             });
@@ -106,7 +106,7 @@ $.widget('blend.tab', {
     _generateItem : function (callback, uixTab) {
         return function (index, _item) {
             var $item = $(_item),
-                blendItem,
+                cmuItem,
                 itemConf ={
                     text : $item.text(),
                     href : $item.data('href')

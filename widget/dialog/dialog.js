@@ -29,7 +29,7 @@
  * 		  dialog.show();
  */
 'use strict';
-$.widget('blend.dialog', {
+$.widget('cmu.dialog', {
     /*配置项*/
     options: {
         id: null,

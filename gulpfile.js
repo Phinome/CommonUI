@@ -251,7 +251,7 @@ gulp.task('build:samples', function () {
             path.dirname = "";
           }))
         // 以下为生成官网首页demo使用，本地预览请注释
-        .pipe(gulpReplace('../../dist/boost.','/assets/blend2/dist/boost.'))
+        .pipe(gulpReplace('../../dist/commonui.','/assets/blend2/dist/commonui.'))
         // replace css js->cdn
         .pipe(gulp.dest(CONFIG.DIST_DIR + '/samples'));
 });

@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
     <title></title>
-    <link rel="stylesheet" href="../../dist/boost.css"/>
+    <link rel="stylesheet" href="../../dist/cmu.css"/>
 </head>
 
 <body>
 
-    <section class="blend-tab">
-        <div class="blend-tab-header">
-            <div class="blend-tab-header-item" data-href='http://div.io'>我的</div>
-            <div class="blend-tab-header-item" data-href='http://www.sina.com'>你的</div>
-            <div class="blend-tab-header-active"></div>
+    <section class="cmu-tab">
+        <div class="cmu-tab-header">
+            <div class="cmu-tab-header-item" data-href='http://div.io'>我的</div>
+            <div class="cmu-tab-header-item" data-href='http://www.sina.com'>你的</div>
+            <div class="cmu-tab-header-active"></div>
         </div>
-        <div class="blend-tab-content">
-            <div class="blend-tab-content-item">我的</div>
-            <div class="blend-tab-content-item">你的</div>
+        <div class="cmu-tab-content">
+            <div class="cmu-tab-content-item">我的</div>
+            <div class="cmu-tab-content-item">你的</div>
         </div>
     </section>
 
@@ -26,17 +26,17 @@
     <button id="destroy">destroy</button><br>
     <button id="create">create</button><br>
 
-    <script src="../../dist/boost.js"></script>
+    <script src="../../dist/cmu.js"></script>
     <script>
-        $('.blend-tab').tab();
+        $('.cmu-tab').tab();
         $('#active').click(function() {
-            $('.blend-tab').tab('active', 1);
+            $('.cmu-tab').tab('active', 1);
         });
         $('#destroy').click(function() {
-            $('.blend-tab').tab('destroy');
+            $('.cmu-tab').tab('destroy');
         });
         $('#create').click(function() {
-            $('.blend-tab').tab();
+            $('.cmu-tab').tab();
         });
     </script>
 </body>

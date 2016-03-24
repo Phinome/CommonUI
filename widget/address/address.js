@@ -4,12 +4,12 @@
  * @file address 组件
  */
 
-$.widget('blend.address', {
+$.widget('cmu.address', {
     /**
      * 组件的默认选项
      */
     options: {
-        btnClass: NAMESPACE + 'address-btn'
+        btnClass: NAMESPACE + 'cmu-btn'
     },
     /**
      * _create 创建组件时调用一次

@@ -5,40 +5,40 @@
     <meta charset="UTF-8">
     <meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
     <title>address</title>
-    <link rel="stylesheet" href="../../dist/boost.css"/>
+    <link rel="stylesheet" href="../../dist/cmu.css"/>
 </head>
 
 <body>
 
-<div id="validate" class="blend-address" style="margin: 8px 0;">
-    <div class="blend-address-name"><span>收货人</span></div>
-    <div class="blend-address-value">
-        <div class="blend-address-input">
-            <input type="text" class="blend-address-detail" value="熊猫先森">
+<div id="validate" class="cmu-address" style="margin: 8px 0;">
+    <div class="cmu-address-name"><span>收货人</span></div>
+    <div class="cmu-address-value">
+        <div class="cmu-address-input">
+            <input type="text" class="cmu-address-detail" value="熊猫先森">
         </div>
-        <div class="blend-address-input">
-            <input type="text" class="blend-address-detail" value="15710094933">
-        </div>
-    </div>
-</div>
-
-<div id="asyn" class="blend-address" style="margin: 20px 0;">
-    <div class="blend-address-name"><span>收货地址</span></div>
-    <div class="blend-address-value">
-        <div class="blend-address-input">
-            <p class="blend-address-detail blend-address-btn">四川省 成都市<span class="blend-address-arrow"></span></p>
-        </div>
-        <div class="blend-address-input">
-            <textarea class="blend-address-detail blend-address-gray">北郊斧头山成都大熊猫繁育基地动物园区</textarea>
+        <div class="cmu-address-input">
+            <input type="text" class="cmu-address-detail" value="15710094933">
         </div>
     </div>
 </div>
 
-<script src="../../dist/boost.js"></script>
+<div id="asyn" class="cmu-address" style="margin: 20px 0;">
+    <div class="cmu-address-name"><span>收货地址</span></div>
+    <div class="cmu-address-value">
+        <div class="cmu-address-input">
+            <p class="cmu-address-detail cmu-address-btn">四川省 成都市<span class="cmu-address-arrow"></span></p>
+        </div>
+        <div class="cmu-address-input">
+            <textarea class="cmu-address-detail cmu-address-gray">北郊斧头山成都大熊猫繁育基地动物园区</textarea>
+        </div>
+    </div>
+</div>
+
+<script src="../../dist/cmu.js"></script>
 <script>   
-    $('#validate').find('.blend-address-input').formgroup({
+    $('#validate').find('.cmu-address-input').formgroup({
         validate: true,
-        inputClass: "blend-address-detail",
+        inputClass: "cmu-address-detail",
         validateFunction: function (value, $ele) {
             if (!value) {
                 return 'empty';
@@ -46,9 +46,9 @@
         }
     });
 
-    $('#asyn').find('.blend-address-input').formgroup({
+    $('#asyn').find('.cmu-address-input').formgroup({
         validate: true,
-        inputClass: "blend-address-detail",
+        inputClass: "cmu-address-detail",
         validateFunction: function (value, $ele) {
             if (!value) {
                 return 'empty';
@@ -60,7 +60,7 @@
         // alert("点击事件");
     });
     
-    $('#validate').find('.blend-address-input').eq(1).formgroup({
+    $('#validate').find('.cmu-address-input').eq(1).formgroup({
         validate: true,
         asyn: true,
         validateFunction: function (value, $ele, cb) {
@@ -83,7 +83,7 @@
         }
     });
 
-    $('.blend-address-arrow').click(function () {
+    $('.cmu-address-arrow').click(function () {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 alert([position.coords.latitude, position.coords.longitude].join(','));

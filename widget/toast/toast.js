@@ -6,7 +6,7 @@
  * @date 2015.02.05
  */
 'use strict';
-$.widget('blend.toast', {
+$.widget('cmu.toast', {
     /*配置项*/
     options: {
         toastClass: '',

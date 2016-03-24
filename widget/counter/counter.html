@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>数量选择器</title>
-    <link rel="stylesheet" href="../../dist/boost.css">
+    <link rel="stylesheet" href="../../dist/cmu.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <style type="text/css">
-    .blend-counter{
+    .cmu-counter{
         margin: 15px;
     }
     </style>
@@ -15,35 +15,35 @@
 
 <body>
 
-<header data-blend-widget="header" class="blend-header">
-        <span class="blend-header-left">
-            <a class="blend-header-item blend-action-back-icon" href="javascript:history.back();">&#xe600;</a>
+<header data-cmu-widget="header" class="cmu-header">
+        <span class="cmu-header-left">
+            <a class="cmu-header-item cmu-action-back-icon" href="javascript:history.back();">&#xe600;</a>
         </span>
-        <span class="blend-header-title">
-            <span class="blend-header-item">计数器</span>
+        <span class="cmu-header-title">
+            <span class="cmu-header-item">计数器</span>
         </span>
-        <span class="blend-header-right">
+        <span class="cmu-header-right">
         </span>
 </header>
 
 
-    <div data-blend-widget="counter" data-blend-counter='{"step":1,"maxValue":10}' class="blend-counter">
-        <div class="blend-counter-minus"></div>
-        <input class="blend-counter-input" type="text">
-        <div class="blend-counter-plus"></div>
+    <div data-cmu-widget="counter" data-cmu-counter='{"step":1,"maxValue":10}' class="cmu-counter">
+        <div class="cmu-counter-minus"></div>
+        <input class="cmu-counter-input" type="text">
+        <div class="cmu-counter-plus"></div>
     </div>
 
-    <div data-blend-widget="counter" data-blend-counter='{"step":2,"maxValue":10}' class="blend-counter" style="margin-top: 10px;">
-        <div class="blend-counter-minus"></div>
-        <input class="blend-counter-input" type="text">
-        <div class="blend-counter-plus"></div>
+    <div data-cmu-widget="counter" data-cmu-counter='{"step":2,"maxValue":10}' class="cmu-counter" style="margin-top: 10px;">
+        <div class="cmu-counter-minus"></div>
+        <input class="cmu-counter-input" type="text">
+        <div class="cmu-counter-plus"></div>
     </div>
 
-    <script src="../../dist/boost.js"></script>
+    <script src="../../dist/cmu.js"></script>
     <script>
         $(function () {
             // 选择元素
-            var $counter = $('[data-blend-widget="counter"]')
+            var $counter = $('[data-cmu-widget="counter"]')
 
             // 初始化, 已经由默认初始化
             //.counter({
