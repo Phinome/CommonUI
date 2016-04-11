@@ -8,7 +8,6 @@
 
 .@{namespace}card {
   position: relative;
-  display: -webkit-flex;
   display: flex;
   width: 100%;
   padding: @card-padding-value;
@@ -19,8 +18,8 @@
     width: 20px;
     height: 22px;
     align-self: center;
-    font-family: 'boostfont';
-    content: '\e604';
+    font-family: 'cmufont';
+    content: '\e610';
     font-size: 18px;
     color: #c5c5c5;
   }
@@ -37,6 +36,83 @@
 
 }
 
+.@{namespace}card-list {
+  position: relative;
+  width: 100%;
+  padding: @card-padding-value;
+  border-bottom: solid 1px #dcdcdc;
+  background-color: #fff;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  .@{namespace}card-item {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .@{namespace}card-row-text {
+    text-align: right;
+  }
+  .@{namespace}card-item-last {
+    height: 40px;
+    margin-top: 0;
+    padding: 0 10px;
+    border-top: none;
+    line-height: 40px;
+    color: #777;
+    background-color: #fafafa;
+
+    i {
+      font-family: 'cmufont';
+      font-size: 14px;
+      font-style: normal;
+    }
+    span {
+      margin-left: 8px;
+    }
+
+    .@{namespace}card-row {
+      margin-top: 0;
+    }
+    .@{namespace}card-row-item-last {
+
+    }
+  }
+  .@{namespace}card-row {
+    height: 100%;
+    margin: 10px;
+  }
+  .@{namespace}card-intro-text {
+    font-size: 14px;
+    color: #f43b3b;
+  }
+  .@{namespace}card-second-intro-text {
+    font-size: 12px;
+    color: #999;
+  }
+}
+
+.@{namespace}action-row {
+}
+
+.@{namespace}card-vertical {
+  position: relative;
+  display: block;
+  margin-right: 8px;
+  &:after {
+    display: block;
+    width: auto;
+    height: auto;
+    content: '';
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .@{namespace}card-img-view {
   width: 65px;
   height: 65px;
@@ -47,10 +123,20 @@
   }
 }
 
+.@{namespace}card-img-vertical-view {
+  width: 146px;
+  height: 110px;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .@{namespace}card-content-view {
   overflow: hidden;
   height: 100%;
-  max-height: 65px;
+  //max-height: 65px;
   padding-right: 10px;
   -webkit-flex: 1;
           flex: 1;
@@ -59,12 +145,30 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    margin: 0;
+    margin-top: 8px;
     font-size: 14px;
     color: #777;
     line-height: 18px;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
+  }
+}
+
+.@{namespace}card-content-vertical-view {
+  margin-top: 10px;
+}
+
+.@{namespace}card-img-view-action {
+  position: relative;
+
+  i {
+    position: absolute;
+    top: 13px;
+    left: 18px;
+    font-family: 'cmufont';
+    font-size: 30px;
+    font-style: normal;
+    color: #fff;
   }
 }
 
@@ -82,6 +186,7 @@
 }
 
 .@{namespace}card-sub-title {
+  margin-top: 8px;
   font-size: 14px;;
   color: #777;
   line-height: 22px;
@@ -95,15 +200,13 @@
 .@{namespace}card {
   .@{namespace}star {
     width: 100%;
-    display: block;
-    display: -webkit-box;
     display: flex;
-    -webkit-box-pack: start;
-    -webkit-box-align: center;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     .@{namespace}star-item {
       width: 19px;
       height: 14px;
+      font-style: normal;
       background-size: 19px 28px;
       background-position: 0 -14px;
       &.selected {
@@ -112,20 +215,17 @@
     }
     .@{namespace}star-num {
       height: 18px;
-      line-height: 22px;
+      margin-left: 8px;
+      line-height: 18px;
       font-size: 18px;
     }
   }
 }
 
 .@{namespace}card-row {
-  display: -webkit-flex;
   display: flex;
   height: 28px;
-  -webkit-box-pack: start;
-  -webkit-box-align: end;
   align-items: flex-end;
-  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 
@@ -146,7 +246,6 @@
   display: flex;
   background-color: #fff;
   padding: 10px;
-  -webkit-justify-content: space-between;
   justify-content: space-between;
 
 }

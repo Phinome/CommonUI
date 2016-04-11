@@ -7,14 +7,50 @@
     <title>grid</title>
     <link rel="stylesheet" href="../../dist/cmu.css">
     <style>
-    .card-demo{background-color: #eee}
+        .card-demo{background-color: #eee}
+        .cmu-card-row .my-price {
+            color: #f43b3b;
+            font-size: 12px;
+        }
+        .cmu-card-row .my-price em {
+            font-style: normal;
+            font-size: 20px;
+            line-height: 20px;
+        }
+        .my-card-row {
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+        .my-card-row .cmu-badge {
+            margin-right: 4px;
+        }
+
+        .my-card-row .cmu-badge:last-child {
+            margin-right: 0;
+        }
+
+        .cmu-card-img-view .cmu-badge-sale {
+            width: 50px;
+            background-color: #f43b3b;
+            transform: translate(-13px, 4px) rotate(-45deg);
+        }
+        .cmu-flexbox {
+            align-content: center;
+            justify-content: center;
+        }
+        .cmu-flexbox-item {
+            margin-right: 8px;
+        }
+        .cmu-flexbox-item:last-child {
+            margin-right: 0;
+        }
     </style>
 </head>
 
 <body>
     <header data-cmu-widget="header" class="cmu-header">
         <span class="cmu-header-left">
-            <a class="cmu-header-item cmu-action-back-icon" href="javascript:history.back();">&#xe600;</a>
+            <a class="cmu-header-item cmu-action-back-icon" href="javascript:history.back();">&#xe615;</a>
         </span>
         <span class="cmu-header-title">
             <span class="cmu-header-item">卡片</span>
@@ -24,9 +60,35 @@
     </header>
 
     <div class="doc-demo card-demo">
+        <div class="cmu-card">
+            <div class="cmu-card-content-view">
+                <div class="cmu-card-title">
+                    标题文字最多 16 个字符
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="doc-demo card-demo">
         <div class="cmu-card ">
             <div class="cmu-card-img-view">
-                <img src="http://clouda.baidu.com/assets/cmu2/images/demo/fruit.jpg">
+                <img src="http://ww2.sinaimg.cn/mw690/556261e9jw1f2s90qry20j20p00gotdh.jpg">
+            </div>
+            <div class="cmu-card-content-view">
+                <div class="cmu-card-title">
+                    这里是标题
+                </div>
+                <p class="cmu-card-text">摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="doc-demo card-demo">
+        <div class="cmu-card ">
+            <div class="cmu-card-img-view cmu-card-img-view-action">
+                <img src="http://ww2.sinaimg.cn/mw690/556261e9jw1f2s90qry20j20p00gotdh.jpg">
+                <i>&#xe642;</i>
             </div>
             <div class="cmu-card-content-view">
                 <div class="cmu-card-title">
@@ -41,7 +103,7 @@
     <div class="doc-demo card-demo">
         <div class="cmu-card ">
             <div class="cmu-card-img-view" style="width:108px;height:148px;">
-                <img src="http://clouda.baidu.com/assets/cmu2/images/demo/fruit.jpg">
+                <img src="http://ww2.sinaimg.cn/mw690/556261e9jw1f2s5rzkwd7j20p00dkjvn.jpg">
             </div>
             <div class="cmu-card-content-view">
                 <div class="cmu-card-title">
@@ -49,6 +111,28 @@
                 </div>
                 <p class="cmu-card-text">摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要</p>
 
+            </div>
+        </div>
+    </div>
+
+    <div class="card-demo">
+        <div class="cmu-card ">
+            <div class="cmu-card-img-view" style="width:108px;height:108px;">
+                <img src="http://clouda.baidu.com/assets/blend2/images/demo/fruit.jpg">
+            </div>
+            <div class="cmu-card-content-view" style="max-height:108px;">
+                <div class="cmu-card-title">
+                    这里是标题
+                </div>
+                <div class="cmu-card-sub-title">辅助信息</div>
+                <div class="cmu-card-row my-card-row">
+                    <span class="cmu-badge cmu-badge-large">在线支付</span>
+                    <span class="cmu-badge cmu-badge-large">随订随用</span>
+                </div>
+                <div class="cmu-card-row">
+                    <div class="cmu-card-row-item my-price"><span>￥<em>8400</em> 起/人</span></div>
+                    <div class="cmu-card-row-item" style="font-size:12px;text-decoration:line-through">12345元</div>
+                </div>
             </div>
         </div>
     </div>
@@ -65,28 +149,134 @@
     </div>
 </div>
 
-<div class="doc-demo card-demo">
-    <div class="cmu-card cmu-card-no-icon">
-        <div class="cmu-card-img-view">
-            <img src="http://clouda.baidu.com/assets/cmu2/images/demo/fruit.jpg">
-        </div>
-        <div class="cmu-card-content-view">
-            <div class="cmu-card-title">
-                这里是标题
+<div class="card-demo cmu-flexbox">
+    <div class="cmu-flexbox-item">
+        <div class="cmu-card cmu-card-no-icon cmu-card-vertical">
+            <div class="cmu-card-img-vertical-view">
+                <img src="http://ww3.sinaimg.cn/mw690/bda4dc34jw1f1m3t6yt1dj20p00ir78l.jpg">
             </div>
-            <div class="cmu-card-row my-card-row">
-                <div class="cmu-star my-star">
-                    <i class="cmu-star-item selected"></i>
-                    <i class="cmu-star-item selected"></i>
-                    <i class="cmu-star-item selected"></i>
-                    <i class="cmu-star-item selected"></i>
-                    <i class="cmu-star-item"></i>
+            <div class="cmu-card-content-vertical-view">
+                <div class="cmu-card-title">
+                    标题最多 15 个字
                 </div>
+                <div class="cmu-card-row my-card-row">
+                    <div class="cmu-star my-star">
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item"></i>
+                        <span class="cmu-star-num">9.0</span>
+                    </div>
+                </div>
+                <div class="cmu-card-sub-title">副标题：文字摘要摘要</div>
             </div>
-            <div class="cmu-card-sub-title">副标题：文字摘要摘要</div>
+        </div>
+    </div>
+    <div class="cmu-flexbox-item">
+        <div class="cmu-card cmu-card-no-icon cmu-card-vertical">
+            <div class="cmu-card-img-vertical-view">
+                <img src="http://ww3.sinaimg.cn/mw690/bda4dc34jw1f1mo6saksqj20p00htgqb.jpg">
+            </div>
+            <div class="cmu-card-content-vertical-view">
+                <div class="cmu-card-title">
+                    标题最多 15 个字
+                </div>
+                <div class="cmu-card-row my-card-row">
+                    <div class="cmu-star my-star">
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item"></i>
+                        <span class="cmu-star-num">9.6</span>
+                    </div>
+                </div>
+                <div class="cmu-card-sub-title">副标题：文字摘要摘要</div>
+            </div>
         </div>
     </div>
 </div>
+
+    <div class="doc-demo card-demo">
+        <div class="cmu-card ">
+            <div class="cmu-card-img-view" style="position: relative;width:108px;height:148px;overflow: hidden;">
+                <img src="http://ww2.sinaimg.cn/mw690/556261e9jw1f2s5rzkwd7j20p00dkjvn.jpg">
+                <span class="cmu-badge cmu-badge-sale">立减</span>
+            </div>
+            <div class="cmu-card-content-view">
+                <div class="cmu-card-title">
+                    这里是标题
+                </div>
+                <div class="cmu-card-row my-card-row">
+                    <div class="cmu-star my-star">
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item selected"></i>
+                        <i class="cmu-star-item"></i>
+                    </div>
+                </div>
+                <p class="cmu-card-text">摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要</p>
+                <div class="cmu-card-row">
+                    <div class="cmu-card-row-item my-price"><span>￥<em>8400</em> 起/人</span></div>
+                    <div class="cmu-card-row-item" style="font-size:12px;text-decoration:line-through">12345元</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="doc-demo card-demo" style="border: 1px solid #ddd;">
+        <div class="cmu-card-list">
+            <div class="cmu-card-item">
+                <div class="cmu-card-row">
+                    <div class="cmu-card-content-view cmu-card-row-item">
+                        <div class="cmu-card-title">
+                            招聘标题最多显示两行其余截断
+                        </div>
+                        <p class="cmu-card-text">摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要</p>
+
+                    </div>
+                    <div class="cmu-card-row-item cmu-card-row-text">
+                        <p class="cmu-card-intro-text">3000-5000 元/月</p>
+                        <p class="cmu-card-second-intro-text">辅助信息</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cmu-card-item">
+                <div class="cmu-card-row">
+                    <div class="cmu-card-content-view cmu-card-row-item">
+                        <div class="cmu-card-title">
+                            招聘标题最多显示两行其余截断
+                        </div>
+                        <p class="cmu-card-text">摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要文字摘要</p>
+
+                    </div>
+                    <div class="cmu-card-row-item cmu-card-row-text">
+                        <p class="cmu-card-intro-text">3000-5000 元/月</p>
+                        <p class="cmu-card-second-intro-text">辅助信息</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cmu-card-item cmu-card-item-last">
+                <div class="cmu-card-row">
+                    <div class="cmu-card-row-item">
+                        <i>&#xe6a1;</i>
+                        <span>电话</span>
+                    </div>
+                    <div class="cmu-card-row-item">
+                        <i>&#xe65b;</i>
+                        <span>投简历</span>
+                    </div>
+                    <div class="cmu-card-row-item-last">
+                        <i></i>
+                        <span>58 同城</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>

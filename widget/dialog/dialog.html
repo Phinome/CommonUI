@@ -19,7 +19,7 @@
 
 <header data-cmu-widget="header" class="cmu-header">
     <span class="cmu-header-left">
-        <a class="cmu-header-item cmu-action-back-icon" href="javascript:history.back();">&#xe600;</a>
+        <a class="cmu-header-item cmu-action-back-icon" href="javascript:history.back();">&#xe615;</a>
     </span>
     <span class="cmu-header-title">
         <span class="cmu-header-item">弹框</span>
@@ -34,6 +34,9 @@
       <button class="cmu-button cmu-button-primary" id="jsInit">Js渲染方式 常规弹框</button>
       <br/> 
       <button class="cmu-button cmu-button-primary"  id="custome">自定义dialog</button>
+      <button class="cmu-button cmu-button-primary" id="loadingInit">loading</button>
+      <button class="cmu-button cmu-button-primary" id="notitleInit">纯文本标题</button>
+      <button class="cmu-button cmu-button-primary" id="validateInit">错误提示dialog</button>
   </div>
   <br/>
   <textarea id="result"></textarea>
@@ -60,6 +63,34 @@
     <div  id="jsInitDialog" class="cmu-dialog">
     </div>
 
+
+    <div  id="loadingInitDialog" class="cmu-dialog">
+        <div class="cmu-dialog-body">
+            <div class="cmu-loading"></div>
+            <p>正在载入...</p>
+        </div>
+    </div>
+
+    <div  id="notitleInitDialog" class="cmu-dialog">
+
+        <div class="cmu-dialog-body">
+            这是提示弹框
+        </div>
+        <div class="cmu-dialog-footer">
+            <a href="javascript:void(0);" class="cmu-dialog-cancel">取消</a>
+            <a href="javascript:void(0);" class="cmu-dialog-confirm">确认</a>
+        </div>
+    </div>
+
+    <div  id="validateInitDialog" class="cmu-dialog">
+        <h3>提示信息错误</h3>
+        <div class="cmu-dialog-body">
+            这是提示弹框
+        </div>
+        <div class="cmu-dialog-footer">
+            <a href="javascript:void(0);" class="cmu-dialog-confirm">确认</a>
+        </div>
+    </div>
 
     <script src="../../dist/cmu.js"></script>
 
