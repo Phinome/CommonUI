@@ -1030,23 +1030,23 @@ a {
 
 .device {
     position: relative;
-    top: 50px;
     display: block;
-    width: 350px;
+    width: 421px;
     height: 813px;
     background-image: url('../imgs/iPhone6.png');
     background-repeat: no-repeat;
     background-position: center 0;
+    background-size: 373px 100%;
 }
 
 .device-window {
     position: absolute;
-    top: 84px;
-    left: 51px;
+    top: 107px;
+    left: 49px;
 }
 
-.device-window iframe {
-    width: 249px;
-    height: 437px;
-    border-radius: 5px;
+#xMode {
+    width: 321px;
+    height: 599px;
+    border-radius: 6px;
 }

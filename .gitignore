@@ -38,3 +38,4 @@ dist/
 out
 gen
 
+.DS_Store

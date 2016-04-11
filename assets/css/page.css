@@ -1,0 +1,54 @@
+.container {
+    margin: 20px;
+}
+
+.responseimage dl {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.responseimage dd {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.responseimage dd p{
+    color: #aaa;
+}
+
+.responseimage .rect {
+    background-color: #ddd;
+}
+
+#r100-100 {
+    width: 100px;
+    height: 100px;
+}
+
+#r130-130 {
+    width: 130px;
+    height: 130px;
+}
+
+#r140-140 {
+    width: 140px;
+    height: 140px;
+}
+
+#r170-170 {
+    width: 170px;
+    height: 170px;
+}
+
+#r188-188 {
+    width: 188px;
+    height: 188px;
+}
+
+#r400-400 {
+    width: 400px;
+    height: 400px;
+}
