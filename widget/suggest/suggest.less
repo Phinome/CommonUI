@@ -1,6 +1,6 @@
-@suggest-magnifier: "\e88b";
-@suggest-cha: "\e6ad";
-@suggest-arrow: "\e861";
+@suggest-magnifier: "\e629";
+@suggest-closed: "\e676";
+@suggest-arrow: "\e615";
 @suggest-font-color: #262626;
 @suggest-input-color: #f9f9f9;
 
@@ -66,10 +66,9 @@
     text-decoration: none;
     &:after {
       margin-left: 18px;
-      content: @suggest-cha !important;
+      content: @suggest-closed !important;
       .font(@font-left);
       font-size: @font-size-lg;
-      color: #b2b2b2;
     }
   }
 }

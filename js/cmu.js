@@ -5874,7 +5874,6 @@ $.widget('cmu.loading', {
         this.$body = $('body');
         
         this.loadingHtml = options.loadingHtml || '<div data-' + NAMESPACE + 'widget="loading" class="' + NAMESPACE + 'loading '+ (options.loadingClass || '') + '"><div class="' + options.loadingImgClass + '"></div><p class="' + NAMESPACE + 'loading-word">' + options.loadingWord + '</p></div>';
-        console.log(this.loadingHtml);
     },
     /**
      * 组件初始化

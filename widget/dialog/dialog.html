@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="stylesheet" href="../../dist/cmu.css">
     <style type="text/css">
-    .cmu-button{
-      margin: 15px;
-    }
+        .cmu-button {
+            margin: 15px;
+        }
     </style>
 </head>
 
@@ -28,157 +27,164 @@
     </span>
 </header>
 
-  <div>
-      <button class="cmu-button cmu-button-primary" id="domInit">DOM渲染方式 提示弹框</button>
-      <br/> 
-      <button class="cmu-button cmu-button-primary" id="jsInit">Js渲染方式 常规弹框</button>
-      <br/> 
-      <button class="cmu-button cmu-button-primary"  id="custome">自定义dialog</button>
-      <button class="cmu-button cmu-button-primary" id="loadingInit">loading</button>
-      <button class="cmu-button cmu-button-primary" id="notitleInit">纯文本标题</button>
-      <button class="cmu-button cmu-button-primary" id="validateInit">错误提示dialog</button>
-  </div>
-  <br/>
-  <textarea id="result"></textarea>
+<div>
+    <button class="cmu-button cmu-button-primary" id="domInit">DOM渲染方式 提示弹框</button>
+    <br/>
+    <button class="cmu-button cmu-button-primary" id="jsInit">Js渲染方式 常规弹框</button>
+    <br/>
+    <button class="cmu-button cmu-button-primary" id="custome">自定义dialog</button>
+    <br/>
+    <button class="cmu-button cmu-button-primary" id="validateInit">错误提示dialog</button>
+</div>
+<br/>
+<textarea id="result"></textarea>
 
-    <div  id="customeDialog" class="cmu-dialog">
+<div id="customeDialog" class="cmu-dialog">
 
-      <h3>这是个h3标题</h3>
-      <h4 style="color:red">这是个自定义的h4标题</h4>
-      <span>哈哈<em>这个地方是斜体</em></span>
-      <p>因为是自定义的，所以没有绑定默认事件，可以点击mask关闭</p>
-    </div>
+    <h3>这是个h3标题</h3>
+    <h4 style="color:red">这是个自定义的h4标题</h4>
+    <span>哈哈<em>这个地方是斜体</em></span>
+    <p>因为是自定义的，所以没有绑定默认事件，可以点击mask关闭</p>
+</div>
 
-    <div  id="domInitDialog" class="cmu-dialog">
+<div id="domInitDialog" class="cmu-dialog">
 
-      <div class="cmu-dialog-body">
+    <div class="cmu-dialog-body">
         这是提示弹框
-      </div>
-      <div class="cmu-dialog-footer">
+    </div>
+    <div class="cmu-dialog-footer">
         <a href="javascript:void(0);" class="cmu-dialog-cancel">取消</a>
         <a href="javascript:void(0);" class="cmu-dialog-confirm">确认</a>
-      </div>
     </div>
+</div>
 
-    <div  id="jsInitDialog" class="cmu-dialog">
+<div id="jsInitDialog" class="cmu-dialog">
+</div>
+
+
+<div id="loadingInitDialog" class="cmu-dialog">
+    <div class="cmu-dialog-body">
+        <div class="cmu-loading"></div>
+        <p>正在载入...</p>
     </div>
+</div>
 
-
-    <div  id="loadingInitDialog" class="cmu-dialog">
-        <div class="cmu-dialog-body">
-            <div class="cmu-loading"></div>
-            <p>正在载入...</p>
-        </div>
+<div id="validateInitDialog" class="cmu-dialog">
+    <h3 class="cmu-dialog-header cmu-dialog-header-error">提示信息错误</h3>
+    <div class="cmu-dialog-body">
+        这是提示弹框
     </div>
-
-    <div  id="notitleInitDialog" class="cmu-dialog">
-
-        <div class="cmu-dialog-body">
-            这是提示弹框
-        </div>
-        <div class="cmu-dialog-footer">
-            <a href="javascript:void(0);" class="cmu-dialog-cancel">取消</a>
-            <a href="javascript:void(0);" class="cmu-dialog-confirm">确认</a>
-        </div>
+    <div class="cmu-dialog-footer">
+        <a href="javascript:void(0);" class="cmu-dialog-confirm">确认</a>
     </div>
+</div>
 
-    <div  id="validateInitDialog" class="cmu-dialog">
-        <h3>提示信息错误</h3>
-        <div class="cmu-dialog-body">
-            这是提示弹框
-        </div>
-        <div class="cmu-dialog-footer">
-            <a href="javascript:void(0);" class="cmu-dialog-confirm">确认</a>
-        </div>
-    </div>
+<script src="../../dist/cmu.js"></script>
 
-    <script src="../../dist/cmu.js"></script>
+<script>
 
-    <script>
+    ;
+    (function () {
 
-        ;(function(){
-
-          //自定义dom渲染方式
-          var dialog1 = $("#customeDialog").dialog({
-            maskTapClose:true,
-            renderType:2
-          }).on('dialog:show',function(){
+        //自定义dom渲染方式
+        var dialog1 = $("#customeDialog").dialog({
+            maskTapClose: true,
+            renderType: 2
+        }).on('dialog:show', function () {
             console.log("dialog show");
             document.querySelector("#result").innerHTML = "dialog show";
-          }).on('dialog:hide',function(){
+        }).on('dialog:hide', function () {
             console.log("dialog hide");
             document.querySelector("#result").innerHTML = "dialog hide";
-          });
+        });
 
 
-          var dialog2 = $("#domInitDialog").dialog({
+        var dialog2 = $("#domInitDialog").dialog({
+            useCustom: false,
+            hasHeader: false,
+            btnStatus: 1,
+            renderType: 0 // 默认使用dom渲染
+        }).on('dialog:show', function () {
+            console.log("dialog show");
+            document.querySelector("#result").innerHTML = "dialog show";
+        }).on('dialog:hide', function () {
+            console.log("dialog hide");
+            document.querySelector("#result").innerHTML = "dialog hide";
+        }).on("dialog:confirm", function () {
+            alert("点击了确认");
+        });
+
+        var dialog4 = $("#validateInitDialog").dialog({
             useCustom:false,
-              hasHeader: false,
+            hasHeader: true,
             btnStatus:1,
             renderType:0 // 默认使用dom渲染
-          }).on('dialog:show',function(){
+        }).on('dialog:show',function(){
             console.log("dialog show");
             document.querySelector("#result").innerHTML = "dialog show";
-          }).on('dialog:hide',function(){
+        }).on('dialog:hide',function(){
             console.log("dialog hide");
             document.querySelector("#result").innerHTML = "dialog hide";
-          }).on("dialog:confirm",function(){
+        }).on("dialog:confirm",function(){
             alert("点击了确认");
-          });
+        });
+        //Dom渲染方式
 
-          //Dom渲染方式
 
-
-          var dialog3 = $("#jsInitDialog").dialog({
-            title:"这是title",
+        var dialog3 = $("#jsInitDialog").dialog({
+            title: "这是title",
             content: '<p style="margin: 0;" class="cmu-dialog-phone">13313331333</p><p style="margin: 0;"><a href="http://www.baidu.com" class="cmu-dialog-link">这是一个链接</a></p>',
             // cancelOnly: 1,
-            confirmText:"确认",
+            confirmText: "确认",
             cancelText: '取消',
-            btnStatus:3,
-            renderType:1  //js渲染
-          }).on('dialog:show',function(){
+            btnStatus: 3,
+            renderType: 1  //js渲染
+        }).on('dialog:show', function () {
             console.log("dialog show");
             document.querySelector("#result").innerHTML = "dialog show";
-          }).on('dialog:hide',function(){
+        }).on('dialog:hide', function () {
             console.log("dialog hide");
             document.querySelector("#result").innerHTML = "dialog hide";
-          }).on("dialog:confirm",function(){
+        }).on("dialog:confirm", function () {
             alert("监听confirm事件");
-          }).on("dialog:cancel",function(){
+        }).on("dialog:cancel", function () {
             alert("监听cancel事件")
-          });
+        });
 
 
-          $("#custome").bind("click",function(){
+        $("#custome").bind("click", function () {
 
             dialog1.dialog("show");
 
-          });
+        });
 
-          $("#domInit").bind("click",function(){
+        $("#domInit").bind("click", function () {
 
             dialog2.dialog("show");
             // dialog2.dialog("show","每一次都在变～～～"+ new Date().getTime());
             /*dialog2.dialog("show",{
-              title:"title~"+ new
-            });*/
+             title:"title~"+ new
+             });*/
 
-          });
+        });
 
-          $("#jsInit").bind("click",function(){
+        $('#validateInit').click(function () {
+            dialog4.dialog('show');
+        });
+
+        $("#jsInit").bind("click", function () {
 
             dialog3.dialog("show");
             /*if(dialog2)
-            dialog2.dialog("show","每一次都在变～～～"+ new Date().getTime());*/
+             dialog2.dialog("show","每一次都在变～～～"+ new Date().getTime());*/
 
 
-          });
+        });
 
 
-        })();
+    })();
 
-    </script>
+</script>
 </body>
 
 </html>
